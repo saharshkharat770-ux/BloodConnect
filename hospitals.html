@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BloodConnect | Hospital &amp; Blood Center Network</title>
+  <meta name="description" content="Connected hospital network topology, regional blood centers, and facility demand matrices.">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Demo Topbar -->
+  <aside class="demo-topbar" aria-label="Project notice">
+    <span class="pill">Prototype</span>
+    <span>Demo data for academic/project demonstration • Regional Healthcare Network Infrastructure</span>
+  </aside>
+
+  <!-- Global Header -->
+  <header class="navbar-wrapper">
+    <input type="checkbox" id="nav-toggle" class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+    <div class="container-wide navbar">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon" aria-hidden="true"></div>
+        <div class="brand-text">
+          <span class="brand-name">Blood<span>Connect</span></span>
+          <span class="brand-sub">Healthcare Network</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="inventory.html" class="nav-link">Inventory</a>
+        <a href="donors.html" class="nav-link">Donors</a>
+        <a href="requests.html" class="nav-link">Requests</a>
+        <a href="hospitals.html" class="nav-link active">Hospitals</a>
+        <a href="analytics.html" class="nav-link">Analytics</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="requests.html#emergency-modal" class="btn-emergency-nav">
+          <span class="pulse-dot" aria-hidden="true"></span>
+          <span class="btn-text">Emergency Request</span>
+        </a>
+
+        <a href="login.html" class="user-profile-badge">
+          <div class="user-avatar" aria-hidden="true">HN</div>
+          <div class="user-meta">
+            <span class="user-name">Hospital Liaison</span>
+            <span class="user-role">Operations</span>
+          </div>
+        </a>
+
+        <label for="nav-toggle" class="hamburger-label" aria-label="Open navigation menu">
+          <div class="hamburger-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </label>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container" style="padding: 2.5rem 1.5rem 5rem;">
+
+    <!-- Page Header -->
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1.25rem; margin-bottom:2rem;">
+      <div>
+        <div class="badge-tag">Affiliated Facilities</div>
+        <h1 class="display-title" style="font-size:2.25rem;">Hospital &amp; Blood Center Network</h1>
+        <p class="section-subtitle" style="margin-bottom:0;">
+          Directory of connected healthcare institutions, rapid trauma centers, and regional blood storage vaults.
+        </p>
+      </div>
+      <div>
+        <a href="contact.html" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          + Connect New Medical Facility
+        </a>
+      </div>
+    </div>
+
+    <!-- Summary KPI Cards -->
+    <section class="kpi-grid" style="margin-bottom: 2.5rem;" aria-label="Network Statistics">
+      <div class="kpi-card">
+        <div class="kpi-top">
+          <span class="kpi-label">Connected Hospitals</span>
+          <div class="kpi-icon-box" style="background:var(--primary-light); color:var(--primary);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+        </div>
+        <div class="kpi-value">186</div>
+        <div class="kpi-trend trend-up">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="18 15 12 9 6 15"/></svg>
+          <span>+14 this quarter</span>
+          <span class="trend-text">across 6 zones</span>
+        </div>
+      </div>
+
+      <div class="kpi-card">
+        <div class="kpi-top">
+          <span class="kpi-label">Regional Blood Centers</span>
+          <div class="kpi-icon-box" style="background:var(--info-bg); color:var(--info-dark);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          </div>
+        </div>
+        <div class="kpi-value">42</div>
+        <div class="kpi-trend trend-up">
+          <span>Active Fractionation</span>
+          <span class="trend-text">facilities</span>
+        </div>
+      </div>
+
+      <div class="kpi-card">
+        <div class="kpi-top">
+          <span class="kpi-label">Transit Vans Dispatched</span>
+          <div class="kpi-icon-box" style="background:var(--success-bg); color:var(--success-dark);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+        </div>
+        <div class="kpi-value">18</div>
+        <div class="kpi-trend" style="color:var(--success);">
+          <span>GPS Cold-Chain Live</span>
+        </div>
+      </div>
+
+      <div class="kpi-card">
+        <div class="kpi-top">
+          <span class="kpi-label">Network SLA Uptime</span>
+          <div class="kpi-icon-box" style="background:var(--warning-bg); color:var(--warning-dark);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+        </div>
+        <div class="kpi-value">99.4%</div>
+        <div class="kpi-trend trend-up">
+          <span>Sub-15m Dispatch</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Regional Blood Network Visual Topology (Section 15) -->
+    <section id="regional-network" class="network-diagram-box" aria-labelledby="network-topology-title">
+      <div style="text-align:center; max-width:680px; margin:0 auto 2.5rem; position:relative; z-index:2;">
+        <span class="badge-tag" style="background:rgba(255,255,255,0.15); color:#FFFFFF; border:1px solid rgba(255,255,255,0.3);">
+          Pure CSS Infrastructure Topology
+        </span>
+        <h2 id="network-topology-title" class="section-title" style="color:#FFFFFF; margin-bottom:0.5rem;">
+          Regional Blood Network
+        </h2>
+        <p style="color:#94A3B8; font-size:0.9375rem; line-height:1.6; margin:0;">
+          Decentralized hub-and-spoke telemetry linking hospital surgical demand to regional cold storage vaults.
+        </p>
+      </div>
+
+      <!-- 3x3 CSS Grid Network Architecture -->
+      <div class="network-hub-grid">
+        <!-- Node 1: North Hub -->
+        <div class="network-node">
+          <span class="badge badge-success" style="margin-bottom:0.5rem;">Online • Node A1</span>
+          <h3 class="node-title">Metro General Hospital</h3>
+          <p style="font-size:0.75rem; color:#94A3B8; margin-bottom:0.5rem;">Mumbai Regional North</p>
+          <div class="node-status">
+            <span class="pulse-dot" style="background:#10B981; width:6px; height:6px;"></span>
+            <span>Demand: 36 Units | Stock: 48</span>
+          </div>
+        </div>
+
+        <!-- Node 2: Top Center -->
+        <div class="network-node">
+          <span class="badge badge-info" style="margin-bottom:0.5rem;">Cold Vault Sub-Station</span>
+          <h3 class="node-title">Thane Blood Fractionation Hub</h3>
+          <p style="font-size:0.75rem; color:#94A3B8; margin-bottom:0.5rem;">Sub-district Storage 04</p>
+          <div class="node-status">
+            <span class="pulse-dot" style="background:#0284C7; width:6px; height:6px;"></span>
+            <span>Vault Capacity: 480 Units</span>
+          </div>
+        </div>
+
+        <!-- Node 3: North East -->
+        <div class="network-node">
+          <span class="badge badge-success" style="margin-bottom:0.5rem;">Online • Node B3</span>
+          <h3 class="node-title">Apollo Life Sciences</h3>
+          <p style="font-size:0.75rem; color:#94A3B8; margin-bottom:0.5rem;">Pune East Campus</p>
+          <div class="node-status">
+            <span class="pulse-dot" style="background:#10B981; width:6px; height:6px;"></span>
+            <span>Demand: 28 Units | Stock: 35</span>
+          </div>
+        </div>
+
+        <!-- Node 4: West Center -->
+        <div class="network-node">
+          <span class="badge badge-danger" style="margin-bottom:0.5rem;">High Demand • Node W1</span>
+          <h3 class="node-title">St. Jude Medical Institute</h3>
+          <p style="font-size:0.75rem; color:#94A3B8; margin-bottom:0.5rem;">Emergency Trauma Wing</p>
+          <div class="node-status">
+            <span class="pulse-dot" style="background:#DC2626; width:6px; height:6px;"></span>
+            <span>Urgent: O-, AB- Needed</span>
+          </div>
+        </div>
+
+        <!-- CENTRAL HUB NODE -->
+        <div class="network-node network-central-hub">
+          <div style="width:2.75rem; height:2.75rem; margin:0 auto 0.5rem; background:rgba(255,255,255,0.2); border-radius:50%; display:flex; align-items:center; justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          </div>
+          <span class="badge" style="background:#FFFFFF; color:#C62828; margin-bottom:0.375rem; font-weight:800;">
+            PRIMARY COMMAND HUB
+          </span>
+          <h3 class="node-title" style="font-size:1.125rem;">BloodConnect Central Vault</h3>
+          <p style="font-size:0.8125rem; color:#FEE2E2; margin-bottom:0.5rem;">2,460 Units In Storage • 18 Transit Vans Live</p>
+          <span style="font-size:0.75rem; color:#FFFFFF; font-weight:700;">100% Core Relay Synchronized</span>
+        </div>
+
+        <!-- Node 6: East Center -->
+        <div class="network-node">
+          <span class="badge badge-success" style="margin-bottom:0.5rem;">Online • Node E2</span>
+          <h3 class="node-title">Ruby Hall Clinic</h3>
+          <p style="font-size:0.75rem; color:#94A3B8; margin-bottom:0.5rem;">Pune Central District</p>
+          <div class="node-status">
+            <span class="pulse-dot" style="background:#10B981; width:6px; height:6px;"></span>
+            <span>Demand: 19 Units | Stock: 24</span>
+          </div>
+        </div>
+
+        <!-- Node 7: South West -->
+        <div class="network-node">
+          <span class="badge badge-success" style="margin-bottom:0.5rem;">Online • Node S1</span>
+          <h3 class="node-title">Sanjeevani Children's</h3>
+          <p style="font-size:0.75rem; color:#94A3B8; margin-bottom:0.5rem;">Pediatric Intensive Care</p>
+          <div class="node-status">
+            <span class="pulse-dot" style="background:#10B981; width:6px; height:6px;"></span>
+            <span>Demand: 12 Units | Stock: 16</span>
+          </div>
+        </div>
+
+        <!-- Node 8: South Center -->
+        <div class="network-node">
+          <span class="badge badge-danger" style="margin-bottom:0.5rem;">Urgent Requisition • Node S2</span>
+          <h3 class="node-title">CityCare Multispeciality</h3>
+          <p style="font-size:0.75rem; color:#94A3B8; margin-bottom:0.5rem;">Pune Regional Trauma Center</p>
+          <div class="node-status">
+            <span class="pulse-dot" style="background:#DC2626; width:6px; height:6px;"></span>
+            <span>Demand: 42 Units | Stock: 68</span>
+          </div>
+        </div>
+
+        <!-- Node 9: South East -->
+        <div class="network-node">
+          <span class="badge badge-info" style="margin-bottom:0.5rem;">Mobile Camp Relay</span>
+          <h3 class="node-title">District Donation Drive 08</h3>
+          <p style="font-size:0.75rem; color:#94A3B8; margin-bottom:0.5rem;">Rotary Club Special Session</p>
+          <div class="node-status">
+            <span class="pulse-dot" style="background:#0284C7; width:6px; height:6px;"></span>
+            <span>Collected Today: 84 Units</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Connected Hospitals Directory Cards (Section 15) -->
+    <section aria-labelledby="hospital-cards-heading">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem; flex-wrap:wrap; gap:1rem;">
+        <div>
+          <h2 id="hospital-cards-heading" class="section-title" style="font-size:1.75rem;">Connected Hospital Directory</h2>
+          <p class="section-subtitle" style="margin-bottom:0;">Live inventory synchronization across affiliated medical facilities.</p>
+        </div>
+        <div class="filter-inputs">
+          <input type="text" class="form-control" placeholder="Filter by hospital name or city" style="max-width:280px;" aria-label="Filter hospitals">
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:1.5rem;">
+        <!-- Card 1 -->
+        <article class="card card-interactive">
+          <div class="card-header">
+            <div>
+              <span class="badge badge-success" style="margin-bottom:0.25rem;">Connected</span>
+              <h3 class="card-title" style="font-size:1.125rem;">CityCare Multispeciality Hospital</h3>
+            </div>
+          </div>
+          <p style="font-size:0.8125rem; color:#64748B; margin-bottom:1rem;">
+            Mumbai, Maharashtra • Trauma Level 1
+          </p>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin-bottom:1rem;">
+            <div style="background:var(--bg-surface-alt); padding:0.625rem; border-radius:var(--radius-sm);">
+              <span style="font-size:0.6875rem; color:#64748B; font-weight:600;">Blood Demand</span>
+              <div style="font-size:1.125rem; font-weight:800; color:var(--navy-900);">42 Units</div>
+            </div>
+            <div style="background:var(--bg-surface-alt); padding:0.625rem; border-radius:var(--radius-sm);">
+              <span style="font-size:0.6875rem; color:#64748B; font-weight:600;">Available Stock</span>
+              <div style="font-size:1.125rem; font-weight:800; color:var(--success);">68 Units</div>
+            </div>
+          </div>
+          <div style="font-size:0.75rem; color:#64748B; display:flex; justify-content:space-between; border-top:1px solid var(--border-subtle); padding-top:0.75rem;">
+            <span>Emergency Level: <strong>Normal</strong></span>
+            <span>Connected: Jan 2024</span>
+          </div>
+          <div style="margin-top:1rem; display:flex; gap:0.5rem;">
+            <a href="requests.html" class="btn btn-sm btn-primary" style="flex:1;">View Orders</a>
+            <a href="contact.html" class="btn btn-sm btn-secondary">Contact Desk</a>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card card-interactive">
+          <div class="card-header">
+            <div>
+              <span class="badge badge-danger" style="margin-bottom:0.25rem;">Urgent Requisition</span>
+              <h3 class="card-title" style="font-size:1.125rem;">St. Jude Medical Institute</h3>
+            </div>
+          </div>
+          <p style="font-size:0.8125rem; color:#64748B; margin-bottom:1rem;">
+            Thane, Maharashtra • Specialty Surgical
+          </p>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin-bottom:1rem;">
+            <div style="background:var(--bg-surface-alt); padding:0.625rem; border-radius:var(--radius-sm);">
+              <span style="font-size:0.6875rem; color:#64748B; font-weight:600;">Blood Demand</span>
+              <div style="font-size:1.125rem; font-weight:800; color:var(--danger);">24 Units</div>
+            </div>
+            <div style="background:var(--bg-surface-alt); padding:0.625rem; border-radius:var(--radius-sm);">
+              <span style="font-size:0.6875rem; color:#64748B; font-weight:600;">Available Stock</span>
+              <div style="font-size:1.125rem; font-weight:800; color:var(--warning-dark);">15 Units</div>
+            </div>
+          </div>
+          <div style="font-size:0.75rem; color:#64748B; display:flex; justify-content:space-between; border-top:1px solid var(--border-subtle); padding-top:0.75rem;">
+            <span>Emergency Level: <strong style="color:var(--danger);">High Alert</strong></span>
+            <span>Connected: Mar 2023</span>
+          </div>
+          <div style="margin-top:1rem; display:flex; gap:0.5rem;">
+            <a href="requests.html#req-table" class="btn btn-sm btn-danger" style="flex:1;">Dispatch Blood</a>
+            <a href="contact.html" class="btn btn-sm btn-secondary">Contact Desk</a>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card card-interactive">
+          <div class="card-header">
+            <div>
+              <span class="badge badge-success" style="margin-bottom:0.25rem;">Connected</span>
+              <h3 class="card-title" style="font-size:1.125rem;">Metro General Hospital</h3>
+            </div>
+          </div>
+          <p style="font-size:0.8125rem; color:#64748B; margin-bottom:1rem;">
+            Mumbai, Maharashtra • Municipal Medical Wing
+          </p>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin-bottom:1rem;">
+            <div style="background:var(--bg-surface-alt); padding:0.625rem; border-radius:var(--radius-sm);">
+              <span style="font-size:0.6875rem; color:#64748B; font-weight:600;">Blood Demand</span>
+              <div style="font-size:1.125rem; font-weight:800; color:var(--navy-900);">36 Units</div>
+            </div>
+            <div style="background:var(--bg-surface-alt); padding:0.625rem; border-radius:var(--radius-sm);">
+              <span style="font-size:0.6875rem; color:#64748B; font-weight:600;">Available Stock</span>
+              <div style="font-size:1.125rem; font-weight:800; color:var(--success);">52 Units</div>
+            </div>
+          </div>
+          <div style="font-size:0.75rem; color:#64748B; display:flex; justify-content:space-between; border-top:1px solid var(--border-subtle); padding-top:0.75rem;">
+            <span>Emergency Level: <strong>Normal</strong></span>
+            <span>Connected: Aug 2022</span>
+          </div>
+          <div style="margin-top:1rem; display:flex; gap:0.5rem;">
+            <a href="requests.html" class="btn btn-sm btn-primary" style="flex:1;">View Orders</a>
+            <a href="contact.html" class="btn btn-sm btn-secondary">Contact Desk</a>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="card card-interactive">
+          <div class="card-header">
+            <div>
+              <span class="badge badge-success" style="margin-bottom:0.25rem;">Connected</span>
+              <h3 class="card-title" style="font-size:1.125rem;">Apollo Life Sciences Center</h3>
+            </div>
+          </div>
+          <p style="font-size:0.8125rem; color:#64748B; margin-bottom:1rem;">
+            Pune, Maharashtra • Research &amp; Oncology
+          </p>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin-bottom:1rem;">
+            <div style="background:var(--bg-surface-alt); padding:0.625rem; border-radius:var(--radius-sm);">
+              <span style="font-size:0.6875rem; color:#64748B; font-weight:600;">Blood Demand</span>
+              <div style="font-size:1.125rem; font-weight:800; color:var(--navy-900);">28 Units</div>
+            </div>
+            <div style="background:var(--bg-surface-alt); padding:0.625rem; border-radius:var(--radius-sm);">
+              <span style="font-size:0.6875rem; color:#64748B; font-weight:600;">Available Stock</span>
+              <div style="font-size:1.125rem; font-weight:800; color:var(--success);">35 Units</div>
+            </div>
+          </div>
+          <div style="font-size:0.75rem; color:#64748B; display:flex; justify-content:space-between; border-top:1px solid var(--border-subtle); padding-top:0.75rem;">
+            <span>Emergency Level: <strong>Normal</strong></span>
+            <span>Connected: Nov 2023</span>
+          </div>
+          <div style="margin-top:1rem; display:flex; gap:0.5rem;">
+            <a href="requests.html" class="btn btn-sm btn-primary" style="flex:1;">View Orders</a>
+            <a href="contact.html" class="btn btn-sm btn-secondary">Contact Desk</a>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="card card-interactive">
+          <div class="card-header">
+            <div>
+              <span class="badge badge-success" style="margin-bottom:0.25rem;">Connected</span>
+              <h3 class="card-title" style="font-size:1.125rem;">Ruby Hall Clinic</h3>
+            </div>
+          </div>
+          <p style="font-size:0.8125rem; color:#64748B; margin-bottom:1rem;">
+            Pune, Maharashtra • Cardiac Care Unit
+          </p>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin-bottom:1rem;">
+            <div style="background:var(--bg-surface-alt); padding:0.625rem; border-radius:var(--radius-sm);">
+              <span style="font-size:0.6875rem; color:#64748B; font-weight:600;">Blood Demand</span>
+              <div style="font-size:1.125rem; font-weight:800; color:var(--navy-900);">19 Units</div>
+            </div>
+            <div style="background:var(--bg-surface-alt); padding:0.625rem; border-radius:var(--radius-sm);">
+              <span style="font-size:0.6875rem; color:#64748B; font-weight:600;">Available Stock</span>
+              <div style="font-size:1.125rem; font-weight:800; color:var(--success);">24 Units</div>
+            </div>
+          </div>
+          <div style="font-size:0.75rem; color:#64748B; display:flex; justify-content:space-between; border-top:1px solid var(--border-subtle); padding-top:0.75rem;">
+            <span>Emergency Level: <strong>Normal</strong></span>
+            <span>Connected: Feb 2023</span>
+          </div>
+          <div style="margin-top:1rem; display:flex; gap:0.5rem;">
+            <a href="requests.html" class="btn btn-sm btn-primary" style="flex:1;">View Orders</a>
+            <a href="contact.html" class="btn btn-sm btn-secondary">Contact Desk</a>
+          </div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="card card-interactive">
+          <div class="card-header">
+            <div>
+              <span class="badge badge-success" style="margin-bottom:0.25rem;">Connected</span>
+              <h3 class="card-title" style="font-size:1.125rem;">Sanjeevani Children's Hospital</h3>
+            </div>
+          </div>
+          <p style="font-size:0.8125rem; color:#64748B; margin-bottom:1rem;">
+            Mumbai, Maharashtra • Maternal &amp; Pediatric
+          </p>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin-bottom:1rem;">
+            <div style="background:var(--bg-surface-alt); padding:0.625rem; border-radius:var(--radius-sm);">
+              <span style="font-size:0.6875rem; color:#64748B; font-weight:600;">Blood Demand</span>
+              <div style="font-size:1.125rem; font-weight:800; color:var(--navy-900);">12 Units</div>
+            </div>
+            <div style="background:var(--bg-surface-alt); padding:0.625rem; border-radius:var(--radius-sm);">
+              <span style="font-size:0.6875rem; color:#64748B; font-weight:600;">Available Stock</span>
+              <div style="font-size:1.125rem; font-weight:800; color:var(--success);">16 Units</div>
+            </div>
+          </div>
+          <div style="font-size:0.75rem; color:#64748B; display:flex; justify-content:space-between; border-top:1px solid var(--border-subtle); padding-top:0.75rem;">
+            <span>Emergency Level: <strong>Normal</strong></span>
+            <span>Connected: Jun 2024</span>
+          </div>
+          <div style="margin-top:1rem; display:flex; gap:0.5rem;">
+            <a href="requests.html" class="btn btn-sm btn-primary" style="flex:1;">View Orders</a>
+            <a href="contact.html" class="btn btn-sm btn-secondary">Contact Desk</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand-logo">
+          <div class="brand-icon" aria-hidden="true"></div>
+          <div class="brand-text">
+            <span class="brand-name">Blood<span style="color:#FF6B6B;">Connect</span></span>
+            <span class="brand-sub" style="color:#94A3B8;">Healthcare Network</span>
+          </div>
+        </a>
+        <p class="footer-tagline">“Connecting Every Drop to Those Who Need It.” Hospital network coordination.</p>
+        <p style="font-size:0.8125rem; color:#64748B;">Academic &amp; Portfolio Project Prototype</p>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Platform</h4>
+        <ul class="footer-links">
+          <li><a href="dashboard.html">Command Dashboard</a></li>
+          <li><a href="inventory.html">Blood Inventory</a></li>
+          <li><a href="donors.html">Donor Registry</a></li>
+          <li><a href="requests.html">Requisition Center</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Network</h4>
+        <ul class="footer-links">
+          <li><a href="hospitals.html">Connected Hospitals</a></li>
+          <li><a href="#regional-network">Regional Topology</a></li>
+          <li><a href="contact.html">Add New Facility</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Support</h4>
+        <ul class="footer-links">
+          <li><a href="about.html">About BloodConnect</a></li>
+          <li><a href="contact.html">Facility Onboarding</a></li>
+          <li><a href="login.html">Sign In</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>&copy; 2026 BloodConnect • Academic Project Demo</div>
+      <div class="footer-badges">
+        <span class="footer-tech-tag">HTML5 &amp; CSS3</span>
+        <span class="footer-tech-tag">Zero JavaScript</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

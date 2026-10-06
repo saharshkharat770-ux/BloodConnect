@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BloodConnect | Analytics, Reports &amp; Intelligence</title>
+  <meta name="description" content="Healthcare BI intelligence, donation growth trajectories, blood type distributions, and automated compliance reports.">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Demo Topbar -->
+  <aside class="demo-topbar" aria-label="Project notice">
+    <span class="pill">Prototype</span>
+    <span>Demo data for academic/project demonstration • Regional Healthcare Intelligence Unit</span>
+  </aside>
+
+  <!-- Global Header -->
+  <header class="navbar-wrapper">
+    <input type="checkbox" id="nav-toggle" class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+    <div class="container-wide navbar">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon" aria-hidden="true"></div>
+        <div class="brand-text">
+          <span class="brand-name">Blood<span>Connect</span></span>
+          <span class="brand-sub">Healthcare Network</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="inventory.html" class="nav-link">Inventory</a>
+        <a href="donors.html" class="nav-link">Donors</a>
+        <a href="requests.html" class="nav-link">Requests</a>
+        <a href="hospitals.html" class="nav-link">Hospitals</a>
+        <a href="analytics.html" class="nav-link active">Analytics</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="requests.html#emergency-modal" class="btn-emergency-nav">
+          <span class="pulse-dot" aria-hidden="true"></span>
+          <span class="btn-text">Emergency Request</span>
+        </a>
+
+        <a href="login.html" class="user-profile-badge">
+          <div class="user-avatar" aria-hidden="true">BI</div>
+          <div class="user-meta">
+            <span class="user-name">Analytics Desk</span>
+            <span class="user-role">BI Analyst</span>
+          </div>
+        </a>
+
+        <label for="nav-toggle" class="hamburger-label" aria-label="Open navigation menu">
+          <div class="hamburger-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </label>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container" style="padding: 2.5rem 1.5rem 5rem;">
+
+    <!-- Page Header -->
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1.25rem; margin-bottom:2rem;">
+      <div>
+        <div class="badge-tag">Clinical Data Intelligence</div>
+        <h1 class="display-title" style="font-size:2.25rem;">Analytics &amp; Intelligence Reports</h1>
+        <p class="section-subtitle" style="margin-bottom:0;">
+          Predictive donation velocity, demand variance tracking, and regulatory audit reports.
+        </p>
+      </div>
+      <div>
+        <a href="#reports-section" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Export Compliance Dossier
+        </a>
+      </div>
+    </div>
+
+    <!-- 4 High-Level Performance Metrics (Section 16) -->
+    <section class="kpi-grid" style="margin-bottom: 2.5rem;" aria-label="Key Performance Indicators">
+      <div class="kpi-card">
+        <div class="kpi-top">
+          <span class="kpi-label">Donation Growth</span>
+          <div class="kpi-icon-box" style="background:var(--success-bg); color:var(--success-dark);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </div>
+        </div>
+        <div class="kpi-value" style="color:var(--success-dark);">+14.8%</div>
+        <div class="kpi-trend trend-up">
+          <span>Target exceeded</span>
+          <span class="trend-text">voluntary drives</span>
+        </div>
+      </div>
+
+      <div class="kpi-card">
+        <div class="kpi-top">
+          <span class="kpi-label">Request Growth</span>
+          <div class="kpi-icon-box" style="background:var(--info-bg); color:var(--info-dark);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+          </div>
+        </div>
+        <div class="kpi-value">+8.2%</div>
+        <div class="kpi-trend" style="color:var(--navy-600);">
+          <span>Elective surgical surge</span>
+        </div>
+      </div>
+
+      <div class="kpi-card">
+        <div class="kpi-top">
+          <span class="kpi-label">Emergency Fulfillment</span>
+          <div class="kpi-icon-box" style="background:var(--primary-light); color:var(--primary);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+        </div>
+        <div class="kpi-value">96.4%</div>
+        <div class="kpi-trend trend-up">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="18 15 12 9 6 15"/></svg>
+          <span>Under 30-min window</span>
+        </div>
+      </div>
+
+      <div class="kpi-card">
+        <div class="kpi-top">
+          <span class="kpi-label">Average Response Time</span>
+          <div class="kpi-icon-box" style="background:var(--warning-bg); color:var(--warning-dark);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+          </div>
+        </div>
+        <div class="kpi-value">18 <span style="font-size:1.125rem; font-weight:600; color:#64748B;">min</span></div>
+        <div class="kpi-trend trend-up">
+          <span style="color:var(--success);">3 min faster</span>
+          <span class="trend-text">than regional SLA</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visual Charts Grid (Section 16) -->
+    <div style="display:grid; grid-template-columns: 1.15fr 0.85fr; gap: 1.5rem; margin-bottom: 2.5rem;">
+
+      <!-- Chart 1: Monthly Donations (CSS Bar Chart) -->
+      <section class="chart-card" aria-labelledby="bar-chart-title">
+        <div class="card-header">
+          <div>
+            <h2 id="bar-chart-title" class="card-title">Monthly Blood Collections (Units)</h2>
+            <span class="card-subtitle">Aggregated donations across mobile drives &amp; hospital centers</span>
+          </div>
+          <span class="badge badge-success">+14.8% YoY</span>
+        </div>
+
+        <div class="bar-chart-container" role="img" aria-label="Bar chart showing collections from May to October">
+          <!-- Col 1: May -->
+          <div class="bar-col">
+            <span class="bar-value">1,820</span>
+            <div class="bar-pill" style="height: 60%;"></div>
+            <span class="bar-label">May</span>
+          </div>
+          <!-- Col 2: Jun -->
+          <div class="bar-col">
+            <span class="bar-value">1,940</span>
+            <div class="bar-pill" style="height: 66%;"></div>
+            <span class="bar-label">Jun</span>
+          </div>
+          <!-- Col 3: Jul -->
+          <div class="bar-col">
+            <span class="bar-value">2,110</span>
+            <div class="bar-pill" style="height: 74%;"></div>
+            <span class="bar-label">Jul</span>
+          </div>
+          <!-- Col 4: Aug -->
+          <div class="bar-col">
+            <span class="bar-value">2,280</span>
+            <div class="bar-pill" style="height: 82%;"></div>
+            <span class="bar-label">Aug</span>
+          </div>
+          <!-- Col 5: Sep -->
+          <div class="bar-col">
+            <span class="bar-value">2,390</span>
+            <div class="bar-pill" style="height: 88%;"></div>
+            <span class="bar-label">Sep</span>
+          </div>
+          <!-- Col 6: Oct -->
+          <div class="bar-col">
+            <span class="bar-value" style="color:var(--primary); font-weight:800;">2,460</span>
+            <div class="bar-pill" style="height: 94%; background:linear-gradient(180deg, #E53935 0%, #C62828 100%);"></div>
+            <span class="bar-label" style="font-weight:700; color:var(--navy-900);">Oct (Curr)</span>
+          </div>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:1rem; font-size:0.8125rem; color:#64748B;">
+          <span>Vault Peak Capacity: 3,000 Units</span>
+          <span>Monthly Quota Met: 104.2%</span>
+        </div>
+      </section>
+
+      <!-- Chart 2: Blood Group Distribution (Pure CSS Conic Gradient Donut) -->
+      <section class="chart-card" aria-labelledby="donut-chart-title">
+        <div class="card-header">
+          <div>
+            <h2 id="donut-chart-title" class="card-title">Blood Group Stock Share</h2>
+            <span class="card-subtitle">Active distribution in cold storage</span>
+          </div>
+          <span class="badge badge-neutral">2,460 Units Total</span>
+        </div>
+
+        <div class="donut-chart-wrapper">
+          <div class="donut-graphic" role="img" aria-label="Donut chart of blood group proportions">
+            <div class="donut-center-cutout">
+              <div class="center-number">100%</div>
+              <div class="center-label">Cold Stock</div>
+            </div>
+          </div>
+
+          <div class="donut-legend">
+            <div class="legend-item">
+              <span class="legend-color-box" style="background:#C62828;"></span>
+              <span><strong>O+</strong> Positive — 38% (482 U)</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-color-box" style="background:#E53935;"></span>
+              <span><strong>A+</strong> Positive — 28% (318 U)</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-color-box" style="background:#FF6B6B;"></span>
+              <span><strong>B+</strong> Positive — 18% (412 U)</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-color-box" style="background:#162033;"></span>
+              <span><strong>AB+</strong> Positive — 10% (184 U)</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-color-box" style="background:#64748B;"></span>
+              <span><strong>Rh-</strong> Rare Types — 6% (64 U)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Charts Row 2: Clinical Requisitions + Trends -->
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 3.5rem;">
+
+      <!-- Horizontal Bar Chart: Blood Requests by Department -->
+      <section class="chart-card" aria-labelledby="hbars-title">
+        <div class="card-header">
+          <div>
+            <h2 id="hbars-title" class="card-title">Requisitions by Department</h2>
+            <span class="card-subtitle">Hospital utilization patterns this month</span>
+          </div>
+          <span class="badge badge-info">1,120 Orders</span>
+        </div>
+
+        <div class="horizontal-bars">
+          <!-- Item 1 -->
+          <div class="h-bar-item">
+            <div class="h-bar-label-row">
+              <span>Emergency Trauma &amp; Surgery</span>
+              <span style="color:var(--primary); font-weight:700;">42% (470 Units)</span>
+            </div>
+            <div class="h-bar-track">
+              <div class="h-bar-fill" style="width: 42%;"></div>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="h-bar-item">
+            <div class="h-bar-label-row">
+              <span>Oncology &amp; Hematology</span>
+              <span style="font-weight:700;">26% (291 Units)</span>
+            </div>
+            <div class="h-bar-track">
+              <div class="h-bar-fill" style="width: 26%; background:linear-gradient(90deg, #E53935, #FF6B6B);"></div>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="h-bar-item">
+            <div class="h-bar-label-row">
+              <span>Obstetrics &amp; Maternal Health</span>
+              <span style="font-weight:700;">18% (201 Units)</span>
+            </div>
+            <div class="h-bar-track">
+              <div class="h-bar-fill" style="width: 18%; background:linear-gradient(90deg, #3B82F6, #1D4ED8);"></div>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="h-bar-item">
+            <div class="h-bar-label-row">
+              <span>Pediatrics &amp; Neonatal ICU</span>
+              <span style="font-weight:700;">14% (158 Units)</span>
+            </div>
+            <div class="h-bar-track">
+              <div class="h-bar-fill" style="width: 14%; background:linear-gradient(90deg, #10B981, #059669);"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SVG Donation Trends Curve -->
+      <section class="chart-card" aria-labelledby="trend-title">
+        <div class="card-header">
+          <div>
+            <h2 id="trend-title" class="card-title">Daily Emergency Response Time Trend</h2>
+            <span class="card-subtitle">Tracking minutes from broadcast to hospital delivery</span>
+          </div>
+          <span class="badge badge-success">Target: &lt; 25 min</span>
+        </div>
+
+        <div style="padding-top:1rem;">
+          <svg class="svg-chart-container" viewBox="0 0 500 160" preserveAspectRatio="none" role="img" aria-label="Line graph of response time improving from 28m down to 18m">
+            <defs>
+              <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#C62828" stop-opacity="0.3"/>
+                <stop offset="100%" stop-color="#C62828" stop-opacity="0.0"/>
+              </linearGradient>
+            </defs>
+            <!-- Grid Lines -->
+            <line x1="0" y1="40" x2="500" y2="40" stroke="#F1F5F9" stroke-width="1"/>
+            <line x1="0" y1="80" x2="500" y2="80" stroke="#F1F5F9" stroke-width="1"/>
+            <line x1="0" y1="120" x2="500" y2="120" stroke="#F1F5F9" stroke-width="1"/>
+
+            <!-- Area Fill -->
+            <polygon points="0,110 80,95 160,85 240,75 320,60 400,50 500,35 500,160 0,160" fill="url(#areaGrad)"/>
+
+            <!-- Smooth Trend Line -->
+            <polyline points="0,110 80,95 160,85 240,75 320,60 400,50 500,35" fill="none" stroke="#C62828" stroke-width="3" stroke-linecap="round"/>
+
+            <!-- Data Points -->
+            <circle cx="80" cy="95" r="4" fill="#FFFFFF" stroke="#C62828" stroke-width="2"/>
+            <circle cx="160" cy="85" r="4" fill="#FFFFFF" stroke="#C62828" stroke-width="2"/>
+            <circle cx="240" cy="75" r="4" fill="#FFFFFF" stroke="#C62828" stroke-width="2"/>
+            <circle cx="320" cy="60" r="4" fill="#FFFFFF" stroke="#C62828" stroke-width="2"/>
+            <circle cx="400" cy="50" r="4" fill="#FFFFFF" stroke="#C62828" stroke-width="2"/>
+            <circle cx="500" cy="35" r="5" fill="#C62828" stroke="#FFFFFF" stroke-width="2"/>
+          </svg>
+
+          <div style="display:flex; justify-content:space-between; font-size:0.75rem; color:#64748B; margin-top:0.75rem;">
+            <span>Day 1 (28 min)</span>
+            <span>Day 5 (24 min)</span>
+            <span>Day 10 (21 min)</span>
+            <span>Day 15 (19 min)</span>
+            <span>Day 20 (18 min avg)</span>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Reports Section (Section 17) -->
+    <section id="reports-section" class="card" style="padding:0; overflow:hidden;" aria-labelledby="reports-table-heading">
+      <div class="card-header" style="padding:1.25rem 1.5rem; margin-bottom:0;">
+        <div>
+          <h2 id="reports-table-heading" class="card-title">Available Governance &amp; Operational Reports</h2>
+          <span class="card-subtitle">Automated audits generated according to regulatory healthcare protocols</span>
+        </div>
+        <span class="badge badge-success">Cryptographically Sealed Logs</span>
+      </div>
+
+      <div class="table-responsive" style="border:none; border-radius:0;">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Report Name</th>
+              <th>Generated Date</th>
+              <th>Type</th>
+              <th>Status</th>
+              <th style="text-align:right;">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Report 1 -->
+            <tr>
+              <td>
+                <div style="font-weight:700; color:var(--navy-900);">Daily Inventory Report</div>
+                <div style="font-size:0.75rem; color:#64748B;">Cold-chain vault levels, fractionated components, reserve metrics</div>
+              </td>
+              <td>Today, 06:00 AM</td>
+              <td><span class="badge badge-neutral">Inventory</span></td>
+              <td><span class="badge badge-success">Generated</span></td>
+              <td style="text-align:right;">
+                <a href="#" class="btn btn-sm btn-secondary">Download PDF</a>
+              </td>
+            </tr>
+
+            <!-- Report 2 -->
+            <tr>
+              <td>
+                <div style="font-weight:700; color:var(--navy-900);">Monthly Donation Report</div>
+                <div style="font-size:0.75rem; color:#64748B;">Voluntary donor numbers, mobile camp collections, cohort trends</div>
+              </td>
+              <td>Oct 01, 2026</td>
+              <td><span class="badge badge-neutral">Donations</span></td>
+              <td><span class="badge badge-success">Approved</span></td>
+              <td style="text-align:right;">
+                <a href="#" class="btn btn-sm btn-secondary">Download PDF</a>
+              </td>
+            </tr>
+
+            <!-- Report 3 -->
+            <tr>
+              <td>
+                <div style="font-weight:700; color:var(--navy-900);">Blood Demand Analysis</div>
+                <div style="font-size:0.75rem; color:#64748B;">Hospital consumption forecasts by blood group for upcoming 30 days</div>
+              </td>
+              <td>Oct 05, 2026</td>
+              <td><span class="badge badge-neutral">Forecast</span></td>
+              <td><span class="badge badge-success">Generated</span></td>
+              <td style="text-align:right;">
+                <a href="#" class="btn btn-sm btn-secondary">Download CSV</a>
+              </td>
+            </tr>
+
+            <!-- Report 4 -->
+            <tr>
+              <td>
+                <div style="font-weight:700; color:var(--navy-900);">Emergency Response Report</div>
+                <div style="font-size:0.75rem; color:#64748B;">Trauma cases dispatch latency, cross-match times, and courier SLAs</div>
+              </td>
+              <td>Yesterday, 11:59 PM</td>
+              <td><span class="badge badge-neutral">Emergency</span></td>
+              <td><span class="badge badge-success">Ready</span></td>
+              <td style="text-align:right;">
+                <a href="#" class="btn btn-sm btn-secondary">Download PDF</a>
+              </td>
+            </tr>
+
+            <!-- Report 5 -->
+            <tr>
+              <td>
+                <div style="font-weight:700; color:var(--navy-900);">Donor Activity &amp; Retention Report</div>
+                <div style="font-size:0.75rem; color:#64748B;">Repeat donation intervals, retention percentages, cohort demographics</div>
+              </td>
+              <td>Sep 30, 2026</td>
+              <td><span class="badge badge-neutral">Donors</span></td>
+              <td><span class="badge badge-success">Archived</span></td>
+              <td style="text-align:right;">
+                <a href="#" class="btn btn-sm btn-secondary">Download PDF</a>
+              </td>
+            </tr>
+
+            <!-- Report 6 -->
+            <tr>
+              <td>
+                <div style="font-weight:700; color:var(--navy-900);">Hospital Demand &amp; Allocation Audit</div>
+                <div style="font-size:0.75rem; color:#64748B;">Requisitions vs allocations across 186 affiliated network facilities</div>
+              </td>
+              <td>Oct 04, 2026</td>
+              <td><span class="badge badge-neutral">Hospital</span></td>
+              <td><span class="badge badge-success">Generated</span></td>
+              <td style="text-align:right;">
+                <a href="#" class="btn btn-sm btn-secondary">Download PDF</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand-logo">
+          <div class="brand-icon" aria-hidden="true"></div>
+          <div class="brand-text">
+            <span class="brand-name">Blood<span style="color:#FF6B6B;">Connect</span></span>
+            <span class="brand-sub" style="color:#94A3B8;">Healthcare Network</span>
+          </div>
+        </a>
+        <p class="footer-tagline">“Connecting Every Drop to Those Who Need It.” Healthcare BI &amp; analytics.</p>
+        <p style="font-size:0.8125rem; color:#64748B;">Academic &amp; Portfolio Project Prototype</p>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Platform</h4>
+        <ul class="footer-links">
+          <li><a href="dashboard.html">Command Dashboard</a></li>
+          <li><a href="inventory.html">Blood Inventory</a></li>
+          <li><a href="donors.html">Donor Registry</a></li>
+          <li><a href="requests.html">Requisition Center</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Intelligence</h4>
+        <ul class="footer-links">
+          <li><a href="analytics.html">BI Overview</a></li>
+          <li><a href="#reports-section">Download Reports</a></li>
+          <li><a href="hospitals.html">Network Capacity</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Legal &amp; Admin</h4>
+        <ul class="footer-links">
+          <li><a href="about.html">About BloodConnect</a></li>
+          <li><a href="contact.html">Support</a></li>
+          <li><a href="login.html">Sign In</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>&copy; 2026 BloodConnect • Academic Project Demo</div>
+      <div class="footer-badges">
+        <span class="footer-tech-tag">HTML5 &amp; CSS3</span>
+        <span class="footer-tech-tag">Zero JavaScript</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

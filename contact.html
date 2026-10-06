@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BloodConnect | Contact &amp; Emergency Support</title>
+  <meta name="description" content="Reach the 24/7 Emergency Blood Dispatch Desk, regional blood centers, and hospital liaison coordinators.">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Demo Topbar -->
+  <aside class="demo-topbar" aria-label="Project notice">
+    <span class="pill">Prototype</span>
+    <span>Demo data for academic/project demonstration • 24/7 Regional Emergency Dispatch Desk</span>
+  </aside>
+
+  <!-- Global Header -->
+  <header class="navbar-wrapper">
+    <input type="checkbox" id="nav-toggle" class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+    <div class="container-wide navbar">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon" aria-hidden="true"></div>
+        <div class="brand-text">
+          <span class="brand-name">Blood<span>Connect</span></span>
+          <span class="brand-sub">Healthcare Network</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="inventory.html" class="nav-link">Inventory</a>
+        <a href="donors.html" class="nav-link">Donors</a>
+        <a href="requests.html" class="nav-link">Requests</a>
+        <a href="hospitals.html" class="nav-link">Hospitals</a>
+        <a href="analytics.html" class="nav-link">Analytics</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="requests.html#emergency-modal" class="btn-emergency-nav">
+          <span class="pulse-dot" aria-hidden="true"></span>
+          <span class="btn-text">Emergency Request</span>
+        </a>
+
+        <a href="login.html" class="user-profile-badge">
+          <div class="user-avatar" aria-hidden="true">CS</div>
+          <div class="user-meta">
+            <span class="user-name">Support Team</span>
+            <span class="user-role">24/7 Desk</span>
+          </div>
+        </a>
+
+        <label for="nav-toggle" class="hamburger-label" aria-label="Open navigation menu">
+          <div class="hamburger-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </label>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container" style="padding: 2.5rem 1.5rem 5rem;">
+
+    <!-- Page Title -->
+    <div style="text-align: center; max-width: 760px; margin: 0 auto 3rem;">
+      <div class="badge-tag">24/7 Emergency Support</div>
+      <h1 class="display-title" style="font-size:2.25rem;">Contact BloodConnect</h1>
+      <p class="section-subtitle" style="margin-left:auto; margin-right:auto; margin-bottom:0;">
+        Reach our round-the-clock emergency dispatch desk, regional blood vault supervisors, or onboard your medical institution.
+      </p>
+    </div>
+
+    <!-- 24/7 Emergency Hotline Card Banner -->
+    <section class="card" style="background:linear-gradient(135deg, #162033 0%, #0F172A 100%); color:#FFFFFF; padding:2rem 2.5rem; border:1px solid rgba(255,255,255,0.1); margin-bottom:3.5rem;">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.5rem;">
+        <div>
+          <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.5rem;">
+            <span class="pulse-dot"></span>
+            <span style="font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#FFA4A4;">
+              Life-Critical Emergency Hotline
+            </span>
+          </div>
+          <h2 style="font-size:1.75rem; color:#FFFFFF; margin-bottom:0.25rem;">24/7 Trauma Emergency Dispatch Desk</h2>
+          <p style="font-size:0.9375rem; color:#94A3B8; margin:0;">
+            Immediate telephone assistance for operating rooms, ICU transfusions, and catastrophic trauma cases.
+          </p>
+        </div>
+        <div style="display:flex; gap:1rem; align-items:center; flex-wrap:wrap;">
+          <div style="background:rgba(255,255,255,0.1); padding:0.75rem 1.25rem; border-radius:var(--radius-md); border:1px solid rgba(255,255,255,0.15);">
+            <span style="font-size:0.6875rem; color:#94A3B8; display:block;">Emergency Toll-Free (Demo)</span>
+            <strong style="font-size:1.375rem; color:#FFFFFF; font-family:var(--font-mono);">1800-BLOOD-HELP</strong>
+          </div>
+          <a href="requests.html#emergency-modal" class="btn btn-primary btn-lg" style="box-shadow:0 6px 20px rgba(198,40,40,0.4);">
+            Initiate Rapid Dispatch
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Two Columns: Contact Form + Regional Hubs -->
+    <div style="display:grid; grid-template-columns: 1.15fr 0.85fr; gap: 2.5rem; margin-bottom: 4rem;">
+
+      <!-- Column 1: Hospital Liaison Contact Form -->
+      <section class="card" style="padding:2.25rem;" aria-labelledby="form-heading">
+        <div style="margin-bottom:1.5rem;">
+          <h2 id="form-heading" class="card-title" style="font-size:1.375rem;">Institutional Inquiry &amp; Support</h2>
+          <p class="card-subtitle">Connect with network coordinators or request technical assistance</p>
+        </div>
+
+        <form action="#sent" method="GET">
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label" for="contact-name">Your Full Name <span class="req">*</span></label>
+              <input type="text" id="contact-name" class="form-control" placeholder="Dr. Sameer Joshi" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-email">Official Email <span class="req">*</span></label>
+              <input type="email" id="contact-email" class="form-control" placeholder="sameer.joshi@hospital.org" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-phone">Phone Number <span class="req">*</span></label>
+              <input type="tel" id="contact-phone" class="form-control" placeholder="+91 98220 54321" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-subject">Inquiry Subject <span class="req">*</span></label>
+              <select id="contact-subject" class="form-select" required>
+                <option value="">Select Category</option>
+                <option value="hosp-integration">Hospital Network Integration</option>
+                <option value="mobile-camp">Organize Mobile Donation Camp</option>
+                <option value="cold-chain">Cold-Chain Storage Inquiry</option>
+                <option value="academic">Academic &amp; Research Collaboration</option>
+                <option value="technical">General Platform Support</option>
+              </select>
+            </div>
+
+            <div class="form-group form-group-full">
+              <label class="form-label" for="contact-facility">Hospital / Organization Name</label>
+              <input type="text" id="contact-facility" class="form-control" placeholder="e.g. Ruby Hall Speciality Wing">
+            </div>
+
+            <div class="form-group form-group-full">
+              <label class="form-label" for="contact-msg">Message / Inquiry Details <span class="req">*</span></label>
+              <textarea id="contact-msg" class="form-control" rows="4" placeholder="Describe your inquiry, requested camp dates, or technical support requirements..." required></textarea>
+            </div>
+          </div>
+
+          <div style="margin-top:1.5rem;">
+            <button type="submit" class="btn btn-primary btn-lg" style="width:100%;">
+              Send Inquiry Message
+            </button>
+          </div>
+        </form>
+
+        <div id="sent" style="margin-top:1.25rem; padding:1rem; background:#DCFCE7; border:1px solid #BBF7D0; border-radius:var(--radius-md); display:none;">
+          <p style="color:#15803D; font-weight:700; font-size:0.875rem; text-align:center; margin:0;">
+            Thank you! Your demo message has been logged. In production, our liaison officer will respond within 4 business hours.
+          </p>
+        </div>
+        <style>
+          #sent:target {
+            display: block !important;
+          }
+        </style>
+      </section>
+
+      <!-- Column 2: Regional Hub Directory Cards -->
+      <div>
+        <div style="margin-bottom:1.5rem;">
+          <h2 class="card-title" style="font-size:1.375rem;">Regional Vault Locations</h2>
+          <p class="card-subtitle">Strategic cold-storage fractionation and dispatch centers</p>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:1.25rem;">
+          <!-- Hub 1 -->
+          <article class="card">
+            <span class="badge badge-success" style="margin-bottom:0.5rem;">Primary Regional Vault 01</span>
+            <h3 style="font-size:1.0625rem; margin-bottom:0.25rem;">Pune Central Blood Bank</h3>
+            <p style="font-size:0.8125rem; color:#64748B; margin-bottom:0.75rem;">
+              Medical College Enclave, Senapati Bapat Road, Pune - 411016
+            </p>
+            <div style="font-size:0.75rem; color:#334155; line-height:1.6; border-top:1px solid var(--border-subtle); padding-top:0.75rem;">
+              <div>Emergency Desk: <strong>+91 (020) 2567-8900</strong></div>
+              <div>Cold Vault Capacity: <strong>1,200 Units (Active)</strong></div>
+            </div>
+          </article>
+
+          <!-- Hub 2 -->
+          <article class="card">
+            <span class="badge badge-success" style="margin-bottom:0.5rem;">Regional Vault 02</span>
+            <h3 style="font-size:1.0625rem; margin-bottom:0.25rem;">Mumbai Metropolitan Hub</h3>
+            <p style="font-size:0.8125rem; color:#64748B; margin-bottom:0.75rem;">
+              Parel Hospital Complex, Dr. E. Borges Road, Mumbai - 400012
+            </p>
+            <div style="font-size:0.75rem; color:#334155; line-height:1.6; border-top:1px solid var(--border-subtle); padding-top:0.75rem;">
+              <div>Emergency Desk: <strong>+91 (022) 2410-4500</strong></div>
+              <div>Cold Vault Capacity: <strong>950 Units (Active)</strong></div>
+            </div>
+          </article>
+
+          <!-- Hub 3 -->
+          <article class="card">
+            <span class="badge badge-info" style="margin-bottom:0.5rem;">Sub-District Rapid Station 03</span>
+            <h3 style="font-size:1.0625rem; margin-bottom:0.25rem;">Thane Rapid Transit Depot</h3>
+            <p style="font-size:0.8125rem; color:#64748B; margin-bottom:0.75rem;">
+              Eastern Express Highway Corridor, Thane West - 400601
+            </p>
+            <div style="font-size:0.75rem; color:#334155; line-height:1.6; border-top:1px solid var(--border-subtle); padding-top:0.75rem;">
+              <div>Emergency Desk: <strong>+91 (022) 2530-1122</strong></div>
+              <div>Transit Fleet: <strong>6 GPS Refrigerated Ambulances</strong></div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Frequently Asked Questions (Pure CSS Details / Summary Accordion) -->
+    <section aria-labelledby="faq-title" style="margin-top:2rem;">
+      <div style="text-align: center; max-width: 680px; margin: 0 auto 2.5rem;">
+        <span class="badge-tag">Knowledge Base</span>
+        <h2 id="faq-title" class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle" style="margin-left: auto; margin-right: auto;">
+          Common questions on voluntary donation, cold-chain safety, and emergency hospital integration.
+        </p>
+      </div>
+
+      <div class="faq-accordion">
+        <details class="faq-item" open>
+          <summary class="faq-summary">How quickly can blood units be dispatched in an emergency trauma case?</summary>
+          <div class="faq-content">
+            Under Level 1 Trauma Protocol, BloodConnect cross-matches nearest verified inventory within 3 minutes and initiates cold-chain transit with an average delivery window of 18 minutes across affiliated metropolitan trauma centers.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-summary">Who is eligible to register as a voluntary blood donor?</summary>
+          <div class="faq-content">
+            Any healthy individual aged 18 to 65 weighing at least 50 kg with normal hemoglobin (minimum 12.5 g/dL) and who has completed the mandatory 90-day cooldown interval since their previous donation may donate.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-summary">How does BloodConnect monitor cold-chain storage safety?</summary>
+          <div class="faq-content">
+            All regional vault chambers and mobile transit refrigerators maintain continuous digital temperature telemetry strictly calibrated between +2&deg;C and +6&deg;C for whole blood and red cells, and -18&deg;C for fresh frozen plasma.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-summary">How can a new medical facility or hospital join the network?</summary>
+          <div class="faq-content">
+            Accredited hospitals can apply using the Institutional Inquiry form above. Once license and cold-storage compliance are verified by our clinical committee, your facility is provisioned with digital requisition access.
+          </div>
+        </details>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand-logo">
+          <div class="brand-icon" aria-hidden="true"></div>
+          <div class="brand-text">
+            <span class="brand-name">Blood<span style="color:#FF6B6B;">Connect</span></span>
+            <span class="brand-sub" style="color:#94A3B8;">Healthcare Network</span>
+          </div>
+        </a>
+        <p class="footer-tagline">“Connecting Every Drop to Those Who Need It.” Emergency healthcare support.</p>
+        <p style="font-size:0.8125rem; color:#64748B;">Academic &amp; Portfolio Project Prototype</p>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Platform</h4>
+        <ul class="footer-links">
+          <li><a href="dashboard.html">Command Dashboard</a></li>
+          <li><a href="inventory.html">Blood Inventory</a></li>
+          <li><a href="donors.html">Donor Registry</a></li>
+          <li><a href="requests.html">Requisition Center</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Support</h4>
+        <ul class="footer-links">
+          <li><a href="contact.html">Emergency Hotline</a></li>
+          <li><a href="hospitals.html">Regional Hubs</a></li>
+          <li><a href="#faq-title">Help &amp; FAQs</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Legal</h4>
+        <ul class="footer-links">
+          <li><a href="about.html">About BloodConnect</a></li>
+          <li><a href="login.html">Sign In</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>&copy; 2026 BloodConnect • Academic Project Demo</div>
+      <div class="footer-badges">
+        <span class="footer-tech-tag">HTML5 &amp; CSS3</span>
+        <span class="footer-tech-tag">Zero JavaScript</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

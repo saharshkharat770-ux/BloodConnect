@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BloodConnect | About the Platform</title>
+  <meta name="description" content="Learn about BloodConnect, our life-saving healthcare mission, architecture, and technology principles.">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Demo Topbar -->
+  <aside class="demo-topbar" aria-label="Project notice">
+    <span class="pill">Prototype</span>
+    <span>Demo data for academic/project demonstration • Conceptual Healthcare Architecture</span>
+  </aside>
+
+  <!-- Global Header -->
+  <header class="navbar-wrapper">
+    <input type="checkbox" id="nav-toggle" class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+    <div class="container-wide navbar">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon" aria-hidden="true"></div>
+        <div class="brand-text">
+          <span class="brand-name">Blood<span>Connect</span></span>
+          <span class="brand-sub">Healthcare Network</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="inventory.html" class="nav-link">Inventory</a>
+        <a href="donors.html" class="nav-link">Donors</a>
+        <a href="requests.html" class="nav-link">Requests</a>
+        <a href="hospitals.html" class="nav-link">Hospitals</a>
+        <a href="analytics.html" class="nav-link">Analytics</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="requests.html#emergency-modal" class="btn-emergency-nav">
+          <span class="pulse-dot" aria-hidden="true"></span>
+          <span class="btn-text">Emergency Request</span>
+        </a>
+
+        <a href="login.html" class="user-profile-badge">
+          <div class="user-avatar" aria-hidden="true">BC</div>
+          <div class="user-meta">
+            <span class="user-name">Public Overview</span>
+            <span class="user-role">About Project</span>
+          </div>
+        </a>
+
+        <label for="nav-toggle" class="hamburger-label" aria-label="Open navigation menu">
+          <div class="hamburger-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </label>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container" style="padding: 3rem 1.5rem 5rem;">
+
+    <!-- Hero About Title Section -->
+    <section style="text-align: center; max-width: 820px; margin: 0 auto 4rem;">
+      <div class="badge-tag">Academic &amp; Portfolio Prototype</div>
+      <h1 class="display-title" style="margin-bottom: 1.25rem;">Technology That Helps Save Lives.</h1>
+      <p class="section-subtitle" style="font-size: 1.25rem; margin-left: auto; margin-right: auto; line-height: 1.6;">
+        BloodConnect is a conceptual blood bank management platform designed to demonstrate how unified digital architectures eliminate critical information latency between voluntary donors, blood banks, and acute surgical hospital units.
+      </p>
+
+      <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap; margin-top:1.5rem;">
+        <a href="dashboard.html" class="btn btn-primary">Explore Command Center</a>
+        <a href="inventory.html" class="btn btn-secondary">Review Vault Stock</a>
+      </div>
+    </section>
+
+    <!-- Mission & Vision Cards (Section 18) -->
+    <section style="display:grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 4rem;">
+      <!-- Mission -->
+      <article class="card" style="padding:2.5rem; border-left:4px solid var(--primary);">
+        <div style="width:3.25rem; height:3.25rem; border-radius:var(--radius-md); background:var(--primary-light); color:var(--primary); display:flex; align-items:center; justify-content:center; margin-bottom:1.25rem;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        </div>
+        <h2 class="card-title" style="font-size:1.5rem; margin-bottom:0.75rem;">Our Mission</h2>
+        <p style="font-size:1.0625rem; color:var(--navy-800); font-weight:600; line-height:1.6; margin-bottom:1rem;">
+          “To make blood availability information more accessible, organized, and actionable.”
+        </p>
+        <p style="font-size:0.9375rem; color:#64748B; line-height:1.6;">
+          In urgent trauma scenarios, every lost minute diminishes patient survival. BloodConnect standardizes cold-chain inventory reporting and emergency dispatch protocols across disparate health networks into an intuitive, zero-dependency interface.
+        </p>
+      </article>
+
+      <!-- Vision -->
+      <article class="card" style="padding:2.5rem; border-left:4px solid var(--navy-800);">
+        <div style="width:3.25rem; height:3.25rem; border-radius:var(--radius-md); background:var(--bg-surface-alt); color:var(--navy-900); display:flex; align-items:center; justify-content:center; margin-bottom:1.25rem;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h2 class="card-title" style="font-size:1.5rem; margin-bottom:0.75rem;">Our Vision</h2>
+        <p style="font-size:1.0625rem; color:var(--navy-800); font-weight:600; line-height:1.6; margin-bottom:1rem;">
+          “A connected blood network where the right blood reaches the right place at the right time.”
+        </p>
+        <p style="font-size:0.9375rem; color:#64748B; line-height:1.6;">
+          Envisioning a frictionless regional supply chain where surplus stock from metropolitan centers seamlessly cushions rural acute deficits, driven by proactive donor engagement and real-time inventory visibility.
+        </p>
+      </article>
+    </section>
+
+    <!-- Key Digital Transformation Pillars -->
+    <section style="margin-bottom: 4rem;">
+      <div style="text-align: center; max-width: 680px; margin: 0 auto 2.5rem;">
+        <span class="badge-tag">Operational Pillars</span>
+        <h2 class="section-title">Six Pillars of Blood Logistics Modernization</h2>
+        <p class="section-subtitle" style="margin-left: auto; margin-right: auto;">
+          How BloodConnect addresses longstanding friction points in healthcare logistics.
+        </p>
+      </div>
+
+      <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+        <div class="card">
+          <h3 style="font-size:1.125rem; margin-bottom:0.5rem; color:var(--primary);">1. Blood Inventory Visibility</h3>
+          <p style="font-size:0.875rem; color:#64748B; line-height:1.6;">
+            Eliminates telephone inquiries and fragmented paper ledgers by tracking cold-storage units across ABO/Rh classifications in real time.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 style="font-size:1.125rem; margin-bottom:0.5rem; color:var(--primary);">2. Donor Management</h3>
+          <p style="font-size:0.875rem; color:#64748B; line-height:1.6;">
+            Maintains eligibility wait intervals (90-day cooldowns), health clearances, and geolocated voluntary donor registries ready for emergency broadcast.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 style="font-size:1.125rem; margin-bottom:0.5rem; color:var(--primary);">3. Hospital Coordination</h3>
+          <p style="font-size:0.875rem; color:#64748B; line-height:1.6;">
+            Directly interlinks trauma wards, ICUs, and maternity units to regional blood banks via standardized requisition queues.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 style="font-size:1.125rem; margin-bottom:0.5rem; color:var(--primary);">4. Emergency Requests</h3>
+          <p style="font-size:0.875rem; color:#64748B; line-height:1.6;">
+            Immediate priority broadcasting for mass transfusion events, activating urgent donor callouts within 60 seconds.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 style="font-size:1.125rem; margin-bottom:0.5rem; color:var(--primary);">5. Predictive Analytics</h3>
+          <p style="font-size:0.875rem; color:#64748B; line-height:1.6;">
+            Forecasts impending deficits for rare blood types (O-, B-) before they hit critical thresholds, preventing clinical bottlenecks.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 style="font-size:1.125rem; margin-bottom:0.5rem; color:var(--primary);">6. Response Efficiency</h3>
+          <p style="font-size:0.875rem; color:#64748B; line-height:1.6;">
+            Streamlines dispatch logistics, reducing transit coordination latency to an average 18-minute emergency bedside arrival.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blood Compatibility Reference Matrix (Educational Component) -->
+    <section class="card" style="padding:2.5rem; margin-bottom:4rem;" aria-labelledby="compat-matrix-title">
+      <div style="text-align:center; max-width:700px; margin:0 auto 2rem;">
+        <span class="badge-tag">Clinical Reference</span>
+        <h2 id="compat-matrix-title" class="card-title" style="font-size:1.75rem;">Blood Compatibility Reference Matrix</h2>
+        <p class="card-subtitle">
+          Essential ABO and Rh blood group transfusion compatibility guidelines.
+        </p>
+      </div>
+
+      <div class="table-responsive">
+        <table class="data-table" style="text-align:center;">
+          <thead>
+            <tr>
+              <th style="text-align:left;">Blood Group</th>
+              <th>Can Donate To</th>
+              <th>Can Receive From</th>
+              <th>Clinical Role</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background:#FFF5F5;">
+              <td style="text-align:left;">
+                <strong style="color:var(--danger); font-size:1.125rem;">O-</strong>
+              </td>
+              <td><span class="badge badge-success">ALL Blood Types (Universal Donor)</span></td>
+              <td>O- Only</td>
+              <td><span class="badge badge-danger">Emergency Trauma Gold Standard</span></td>
+            </tr>
+            <tr>
+              <td style="text-align:left;"><strong style="font-size:1.125rem;">O+</strong></td>
+              <td>O+, A+, B+, AB+</td>
+              <td>O+, O-</td>
+              <td>Most Common Transfusion Need</td>
+            </tr>
+            <tr>
+              <td style="text-align:left;"><strong style="font-size:1.125rem;">A-</strong></td>
+              <td>A-, A+, AB-, AB+</td>
+              <td>A-, O-</td>
+              <td>Essential Negative Reserve</td>
+            </tr>
+            <tr>
+              <td style="text-align:left;"><strong style="font-size:1.125rem;">A+</strong></td>
+              <td>A+, AB+</td>
+              <td>A+, A-, O+, O-</td>
+              <td>High Surgical Demand</td>
+            </tr>
+            <tr>
+              <td style="text-align:left;"><strong style="font-size:1.125rem;">B-</strong></td>
+              <td>B-, B+, AB-, AB+</td>
+              <td>B-, O-</td>
+              <td>Critical Limited Stock</td>
+            </tr>
+            <tr>
+              <td style="text-align:left;"><strong style="font-size:1.125rem;">B+</strong></td>
+              <td>B+, AB+</td>
+              <td>B+, B-, O+, O-</td>
+              <td>Standard Reserve</td>
+            </tr>
+            <tr>
+              <td style="text-align:left;"><strong style="font-size:1.125rem;">AB-</strong></td>
+              <td>AB-, AB+</td>
+              <td>AB-, A-, B-, O-</td>
+              <td>Rarest Group (&lt; 1% population)</td>
+            </tr>
+            <tr style="background:#F0FDF4;">
+              <td style="text-align:left;"><strong style="font-size:1.125rem; color:#15803D;">AB+</strong></td>
+              <td>AB+ Only</td>
+              <td><span class="badge badge-success">ALL Blood Types (Universal Recipient)</span></td>
+              <td>Universal Plasma Donor</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Prominent Disclaimer Card (Section 18) -->
+    <section class="card" style="background:#FFFBEB; border:1px solid #FDE68A; padding:2rem; text-align:center;">
+      <div style="display:inline-flex; align-items:center; gap:0.5rem; color:#B45309; font-weight:700; margin-bottom:0.5rem;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+        <span>Academic &amp; Portfolio Prototype Notice</span>
+      </div>
+      <p style="font-size:0.9375rem; color:#78350F; max-width:760px; margin:0 auto; line-height:1.6;">
+        “This website is a frontend academic/project prototype. The data shown is fictional and is intended only for demonstration purposes. This system is not linked to a live medical facility or clinical database.”
+      </p>
+    </section>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand-logo">
+          <div class="brand-icon" aria-hidden="true"></div>
+          <div class="brand-text">
+            <span class="brand-name">Blood<span style="color:#FF6B6B;">Connect</span></span>
+            <span class="brand-sub" style="color:#94A3B8;">Healthcare Network</span>
+          </div>
+        </a>
+        <p class="footer-tagline">“Connecting Every Drop to Those Who Need It.” Conceptual healthcare prototype.</p>
+        <p style="font-size:0.8125rem; color:#64748B;">Academic &amp; Portfolio Project Prototype</p>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Platform</h4>
+        <ul class="footer-links">
+          <li><a href="dashboard.html">Command Dashboard</a></li>
+          <li><a href="inventory.html">Blood Inventory</a></li>
+          <li><a href="donors.html">Donor Registry</a></li>
+          <li><a href="requests.html">Requisition Center</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">About</h4>
+        <ul class="footer-links">
+          <li><a href="about.html">Mission &amp; Vision</a></li>
+          <li><a href="about.html#compat-matrix-title">Compatibility Matrix</a></li>
+          <li><a href="hospitals.html">Hospital Network</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Support</h4>
+        <ul class="footer-links">
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="login.html">Sign In</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>&copy; 2026 BloodConnect • Academic Project Demo</div>
+      <div class="footer-badges">
+        <span class="footer-tech-tag">HTML5 &amp; CSS3</span>
+        <span class="footer-tech-tag">Zero JavaScript</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

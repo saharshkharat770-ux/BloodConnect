@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BloodConnect | Blood Bank Management System</title>
+  <meta name="description" content="A modern, unified blood bank management platform connecting donors, hospitals, and emergency requests with real-time inventory visibility.">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/api.js" defer></script>
+</head>
+<body>
+
+  <!-- Academic Demo Disclaimer Topbar -->
+  <aside class="demo-topbar" aria-label="Project notice">
+    <span class="pill">Prototype</span>
+    <span>BloodConnect v2.4 Demo — Academic / Portfolio Demonstration with Fictional Healthcare Data</span>
+  </aside>
+
+  <!-- Global Navigation -->
+  <header class="navbar-wrapper">
+    <input type="checkbox" id="nav-toggle" class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+    <div class="container-wide navbar">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="BloodConnect Home">
+        <div class="brand-icon" aria-hidden="true"></div>
+        <div class="brand-text">
+          <span class="brand-name">Blood<span>Connect</span></span>
+          <span class="brand-sub">Healthcare Network</span>
+        </div>
+      </a>
+
+      <!-- Desktop & Mobile Menu -->
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="inventory.html" class="nav-link">Inventory</a>
+        <a href="donors.html" class="nav-link">Donors</a>
+        <a href="requests.html" class="nav-link">Requests</a>
+        <a href="hospitals.html" class="nav-link">Hospitals</a>
+        <a href="analytics.html" class="nav-link">Analytics</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <a href="#emergency-modal" class="btn-emergency-nav" title="Initiate Urgent Blood Request">
+          <span class="pulse-dot" aria-hidden="true"></span>
+          <span class="btn-text">Emergency Request</span>
+        </a>
+
+        <a href="login.html" class="user-profile-badge" title="Sign In to Administration Portal">
+          <div class="user-avatar" aria-hidden="true">AD</div>
+          <div class="user-meta">
+            <span class="user-name">Admin Portal</span>
+            <span class="user-role">Sign In</span>
+          </div>
+        </a>
+
+        <!-- Mobile Hamburger Trigger -->
+        <label for="nav-toggle" class="hamburger-label" aria-label="Open navigation menu">
+          <div class="hamburger-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </label>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+
+    <!-- Hero Section -->
+    <section class="hero-section" aria-labelledby="hero-heading">
+      <div class="container hero-grid">
+        <!-- Left Hero Content -->
+        <div class="hero-content">
+          <div class="badge-tag">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            Next-Generation Blood Logistics
+          </div>
+          <h1 id="hero-heading" class="hero-title">
+            Every Drop Matters. <br>
+            <span class="highlight">Every Life Counts.</span>
+          </h1>
+          <p class="hero-description">
+            BloodConnect is a modern blood bank management platform designed to connect donors, hospitals, blood centers, and emergency requests through a unified digital experience.
+          </p>
+
+          <div class="hero-actions">
+            <a href="inventory.html" class="btn btn-primary btn-lg">
+              Find Blood Stock
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="donors.html#register" class="btn btn-secondary btn-lg">
+              Become a Donor
+            </a>
+          </div>
+
+          <div class="hero-trust-badges">
+            <div class="trust-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              HIPAA & NABH Protocol Ready
+            </div>
+            <div class="trust-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              24/7 Verified Dispatch Network
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Hero Visual (Pure CSS Dashboard Mockup) -->
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-visual-card">
+            <div class="mockup-header">
+              <div style="display:flex; align-items:center; gap:0.5rem;">
+                <div style="width:10px; height:10px; border-radius:50%; background:#EF4444;"></div>
+                <div style="width:10px; height:10px; border-radius:50%; background:#F59E0B;"></div>
+                <div style="width:10px; height:10px; border-radius:50%; background:#10B981;"></div>
+                <span style="font-size:0.75rem; font-weight:700; color:#64748B; margin-left:0.5rem;">LIVE DISPATCH MONITOR</span>
+              </div>
+              <span class="mockup-status">System Online</span>
+            </div>
+
+            <!-- Priority Emergency Banner Inside Card -->
+            <div class="mockup-emergency-card">
+              <div class="alert-tag">
+                <span class="pulse-dot"></span> Critical Requirement
+              </div>
+              <div class="blood-stat">O- Negative • 4 Units</div>
+              <p style="font-size:0.8125rem; color:#E2E8F0; margin:0.25rem 0 0.75rem;">
+                CityCare Trauma Center • ETA Window: <strong>02:45 Hrs</strong>
+              </p>
+              <div class="progress-container" style="height:6px; background:rgba(255,255,255,0.2);">
+                <div class="progress-bar progress-danger" style="width: 82%;"></div>
+              </div>
+            </div>
+
+            <!-- Mini Grid -->
+            <div class="mockup-grid">
+              <div class="mockup-mini-stat">
+                <div class="label">Total Stock Reserved</div>
+                <div class="val">2,460 <span style="font-size:0.875rem; font-weight:600; color:#16A34A;">+8.4%</span></div>
+                <div style="font-size:0.6875rem; color:#94A3B8; margin-top:0.25rem;">8 Regional Hubs</div>
+              </div>
+              <div class="mockup-mini-stat">
+                <div class="label">Active Donors Ready</div>
+                <div class="val">12,840</div>
+                <div style="font-size:0.6875rem; color:#16A34A; margin-top:0.25rem;">+126 Today</div>
+              </div>
+              <div class="mockup-mini-stat">
+                <div class="label">Avg. Response Time</div>
+                <div class="val">18 <span style="font-size:0.875rem; font-weight:600; color:#64748B;">min</span></div>
+                <div style="font-size:0.6875rem; color:#16A34A; margin-top:0.25rem;">Fastest: 6 min</div>
+              </div>
+              <div class="mockup-mini-stat">
+                <div class="label">Hospital Link Status</div>
+                <div class="val">186 <span style="font-size:0.875rem; font-weight:600; color:#64748B;">Nodes</span></div>
+                <div style="font-size:0.6875rem; color:#16A34A; margin-top:0.25rem;">100% Operational</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hero Statistics Counter Banner -->
+    <section class="stats-banner" aria-label="Key Operational Statistics">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">12,840+</div>
+            <div class="stat-label">Registered Donors</div>
+            <div class="stat-subtext">Verified & Active across 18 districts</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number accent">2,460</div>
+            <div class="stat-label">Units Available</div>
+            <div class="stat-subtext">Tested, separated & cold-stored</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">186</div>
+            <div class="stat-label">Hospitals Connected</div>
+            <div class="stat-subtext">Integrated emergency network</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" style="color:#22C55E;">98.7%</div>
+            <div class="stat-label">Response Fulfillment Rate</div>
+            <div class="stat-subtext">Under 30-min critical dispatch</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blood Availability Section -->
+    <section class="container" style="padding: 5rem 1.5rem;" aria-labelledby="inventory-preview-heading">
+      <div style="text-align: center; max-width: 720px; margin: 0 auto 3rem;">
+        <span class="badge-tag">Real-Time Blood Stock</span>
+        <h2 id="inventory-preview-heading" class="section-title">Live Blood Availability Matrix</h2>
+        <p class="section-subtitle" style="margin-left: auto; margin-right: auto;">
+          Real-time cold-chain blood stock across all affiliated facilities. Stock metrics are calibrated hourly to protect against critical regional shortages.
+        </p>
+      </div>
+
+      <div class="blood-grid">
+        <!-- Card 1: O+ -->
+        <article class="blood-card adequate">
+          <div class="blood-card-top">
+            <div class="blood-type-badge">O+</div>
+            <span class="badge badge-success">High Stock</span>
+          </div>
+          <div class="blood-units-number">482 Units</div>
+          <div class="blood-units-label">Available In Bank</div>
+          <div class="progress-container">
+            <div class="progress-bar progress-success" style="width: 82%;"></div>
+          </div>
+          <div class="blood-card-meta">
+            <span>Critical Min: 120 Units</span>
+            <span>Updated 12m ago</span>
+          </div>
+        </article>
+
+        <!-- Card 2: A+ -->
+        <article class="blood-card adequate">
+          <div class="blood-card-top">
+            <div class="blood-type-badge">A+</div>
+            <span class="badge badge-success">High Stock</span>
+          </div>
+          <div class="blood-units-number">318 Units</div>
+          <div class="blood-units-label">Available In Bank</div>
+          <div class="progress-container">
+            <div class="progress-bar progress-success" style="width: 74%;"></div>
+          </div>
+          <div class="blood-card-meta">
+            <span>Critical Min: 100 Units</span>
+            <span>Updated 8m ago</span>
+          </div>
+        </article>
+
+        <!-- Card 3: B+ -->
+        <article class="blood-card adequate">
+          <div class="blood-card-top">
+            <div class="blood-type-badge">B+</div>
+            <span class="badge badge-success">High Stock</span>
+          </div>
+          <div class="blood-units-number">412 Units</div>
+          <div class="blood-units-label">Available In Bank</div>
+          <div class="progress-container">
+            <div class="progress-bar progress-success" style="width: 78%;"></div>
+          </div>
+          <div class="blood-card-meta">
+            <span>Critical Min: 95 Units</span>
+            <span>Updated 24m ago</span>
+          </div>
+        </article>
+
+        <!-- Card 4: AB+ -->
+        <article class="blood-card adequate">
+          <div class="blood-card-top">
+            <div class="blood-type-badge">AB+</div>
+            <span class="badge badge-success">Optimal</span>
+          </div>
+          <div class="blood-units-number">184 Units</div>
+          <div class="blood-units-label">Universal Recipient</div>
+          <div class="progress-container">
+            <div class="progress-bar progress-success" style="width: 65%;"></div>
+          </div>
+          <div class="blood-card-meta">
+            <span>Critical Min: 50 Units</span>
+            <span>Updated 30m ago</span>
+          </div>
+        </article>
+
+        <!-- Card 5: O- -->
+        <article class="blood-card critical">
+          <div class="blood-card-top">
+            <div class="blood-type-badge" style="background:#FEE2E2; color:#DC2626;">O-</div>
+            <span class="badge badge-danger">Critical Shortage</span>
+          </div>
+          <div class="blood-units-number" style="color:#DC2626;">34 Units</div>
+          <div class="blood-units-label">Universal Donor • Urgent</div>
+          <div class="progress-container">
+            <div class="progress-bar progress-danger" style="width: 28%;"></div>
+          </div>
+          <div class="blood-card-meta">
+            <span style="color:#DC2626; font-weight:600;">Critical Min: 80 Units</span>
+            <span>Updated 4m ago</span>
+          </div>
+        </article>
+
+        <!-- Card 6: A- -->
+        <article class="blood-card low">
+          <div class="blood-card-top">
+            <div class="blood-type-badge">A-</div>
+            <span class="badge badge-warning">Limited Stock</span>
+          </div>
+          <div class="blood-units-number">96 Units</div>
+          <div class="blood-units-label">Available In Bank</div>
+          <div class="progress-container">
+            <div class="progress-bar progress-warning" style="width: 48%;"></div>
+          </div>
+          <div class="blood-card-meta">
+            <span>Critical Min: 60 Units</span>
+            <span>Updated 15m ago</span>
+          </div>
+        </article>
+
+        <!-- Card 7: B- -->
+        <article class="blood-card critical">
+          <div class="blood-card-top">
+            <div class="blood-type-badge" style="background:#FEE2E2; color:#DC2626;">B-</div>
+            <span class="badge badge-danger">Critical</span>
+          </div>
+          <div class="blood-units-number" style="color:#DC2626;">18 Units</div>
+          <div class="blood-units-label">Immediate Influx Needed</div>
+          <div class="progress-container">
+            <div class="progress-bar progress-danger" style="width: 22%;"></div>
+          </div>
+          <div class="blood-card-meta">
+            <span style="color:#DC2626; font-weight:600;">Critical Min: 40 Units</span>
+            <span>Updated 9m ago</span>
+          </div>
+        </article>
+
+        <!-- Card 8: AB- -->
+        <article class="blood-card critical">
+          <div class="blood-card-top">
+            <div class="blood-type-badge" style="background:#FEE2E2; color:#DC2626;">AB-</div>
+            <span class="badge badge-danger">Rare / Critical</span>
+          </div>
+          <div class="blood-units-number" style="color:#DC2626;">12 Units</div>
+          <div class="blood-units-label">Rarest Type</div>
+          <div class="progress-container">
+            <div class="progress-bar progress-danger" style="width: 18%;"></div>
+          </div>
+          <div class="blood-card-meta">
+            <span style="color:#DC2626; font-weight:600;">Critical Min: 25 Units</span>
+            <span>Updated 18m ago</span>
+          </div>
+        </article>
+      </div>
+
+      <div style="text-align: center; margin-top: 2.5rem;">
+        <a href="inventory.html" class="btn btn-secondary">
+          View Complete Blood Inventory Ledger
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Emergency Feature Alert Section -->
+    <section class="container" style="margin-bottom: 5rem;" aria-labelledby="emergency-alert-title">
+      <div class="emergency-alert-panel">
+        <div class="emergency-info">
+          <div class="emergency-badge-pulse">
+            <span class="pulse-dot"></span>
+            Priority Broadcast Level 1
+          </div>
+          <h2 id="emergency-alert-title" class="emergency-title">Emergency Blood Requirement Detected</h2>
+          <p class="emergency-details">
+            Immediate blood requirement detected for surgical trauma care. All active compatible donors in Pune Metropolitan District are requested to confirm readiness.
+          </p>
+          <div class="emergency-meta-pills">
+            <div class="emergency-pill">Blood Group: <strong>O- Negative</strong></div>
+            <div class="emergency-pill">Required Units: <strong>4 Units</strong></div>
+            <div class="emergency-pill">Required Within: <strong>02:45 Hours</strong></div>
+            <div class="emergency-pill">Facility: <strong>CityCare Hospital</strong></div>
+          </div>
+        </div>
+        <div style="flex-shrink: 0; display:flex; flex-direction:column; gap:0.75rem;">
+          <a href="donors.html" class="btn btn-primary btn-lg" style="background:#FFFFFF; color:#DC2626; font-weight:800; box-shadow:0 6px 18px rgba(0,0,0,0.25);">
+            Find Compatible Donors
+          </a>
+          <a href="requests.html" class="btn btn-secondary btn-sm" style="background:rgba(255,255,255,0.15); color:#FFFFFF; border:1px solid rgba(255,255,255,0.3); text-align:center;">
+            View Live Hospital Requests
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Workflow / Storytelling Section -->
+    <section class="workflow-section" aria-labelledby="workflow-title">
+      <div class="container">
+        <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+          <span class="badge-tag">Seamless Lifecycle</span>
+          <h2 id="workflow-title" class="section-title">The Unified Blood Logistics Journey</h2>
+          <p class="section-subtitle" style="margin-left: auto; margin-right: auto;">
+            From voluntary donor appointment to temperature-controlled hospital bedside delivery, BloodConnect orchestrates every vital second.
+          </p>
+        </div>
+
+        <div class="workflow-steps">
+          <!-- Step 1 -->
+          <div class="step-card">
+            <div class="step-bubble">01</div>
+            <h3 class="step-name">Donate</h3>
+            <p class="step-desc">Voluntary donors register with eligibility and health metrics.</p>
+          </div>
+          <!-- Step 2 -->
+          <div class="step-card">
+            <div class="step-bubble">02</div>
+            <h3 class="step-name">Store</h3>
+            <p class="step-desc">Tested, fractionated, and logged into cold-storage units.</p>
+          </div>
+          <!-- Step 3 -->
+          <div class="step-card">
+            <div class="step-bubble">03</div>
+            <h3 class="step-name">Track</h3>
+            <p class="step-desc">Digital inventory monitors shelf life and reserve quotas.</p>
+          </div>
+          <!-- Step 4 -->
+          <div class="step-card">
+            <div class="step-bubble">04</div>
+            <h3 class="step-name">Request</h3>
+            <p class="step-desc">Connected hospitals place standard or emergency requisitions.</p>
+          </div>
+          <!-- Step 5 -->
+          <div class="step-card">
+            <div class="step-bubble">05</div>
+            <h3 class="step-name">Match</h3>
+            <p class="step-desc">Instant cross-match algorithms identify nearest compatible units.</p>
+          </div>
+          <!-- Step 6 -->
+          <div class="step-card">
+            <div class="step-bubble">06</div>
+            <h3 class="step-name">Deliver</h3>
+            <p class="step-desc">GPS cold-chain transport dispatches directly to operating rooms.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Showcase Features -->
+    <section class="container" style="padding: 5rem 1.5rem;" aria-labelledby="showcase-title">
+      <div style="text-align: center; max-width: 700px; margin: 0 auto 3rem;">
+        <span class="badge-tag">Platform Capabilities</span>
+        <h2 id="showcase-title" class="section-title">Built for Smarter Blood Management</h2>
+        <p class="section-subtitle" style="margin-left: auto; margin-right: auto;">
+          Designed with the reliability of medical infrastructure and the clean usability of modern software platforms.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Feature 1 -->
+        <article class="feature-box">
+          <div class="feature-icon-wrapper" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          </div>
+          <h3 class="feature-title">Inventory Intelligence</h3>
+          <p class="feature-text">
+            Track available blood units by ABO/Rh group, shelf-life expiration risks, reserve thresholds, and storage vault conditions in real time.
+          </p>
+        </article>
+
+        <!-- Feature 2 -->
+        <article class="feature-box">
+          <div class="feature-icon-wrapper" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3 class="feature-title">Donor Management</h3>
+          <p class="feature-text">
+            Maintain complete voluntary donor profiles, automated donation interval eligibility calculators, and emergency geo-alert readiness logs.
+          </p>
+        </article>
+
+        <!-- Feature 3 -->
+        <article class="feature-box">
+          <div class="feature-icon-wrapper" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3 class="feature-title">Emergency Requests</h3>
+          <p class="feature-text">
+            Prioritize acute trauma cases with sub-second alert broadcasting, automated cross-matching, and live requisition tracking for doctors.
+          </p>
+        </article>
+
+        <!-- Feature 4 -->
+        <article class="feature-box">
+          <div class="feature-icon-wrapper" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3 class="feature-title">Network Coordination</h3>
+          <p class="feature-text">
+            Seamlessly interconnect municipal blood banks, university medical complexes, and mobile donation drives under one common operating picture.
+          </p>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- CSS-Only Emergency Request Modal -->
+  <aside id="emergency-modal" class="modal-overlay" aria-labelledby="modal-emergency-title" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-head">
+        <div style="display:flex; align-items:center; gap:0.5rem;">
+          <span class="badge badge-danger">Immediate Dispatch</span>
+          <h3 id="modal-emergency-title" class="card-title">Initiate Urgent Blood Requisition</h3>
+        </div>
+        <a href="#" class="modal-close-btn" aria-label="Close modal">&times;</a>
+      </div>
+      <div class="modal-body">
+        <p style="font-size:0.875rem; color:#64748B; margin-bottom:1.25rem;">
+          Emergency requisitions are flagged across regional centers within 60 seconds. Please supply the hospital dispatch details below:
+        </p>
+        <form action="requests.html" method="GET">
+          <div class="form-grid">
+            <div class="form-group form-group-full">
+              <label class="form-label" for="req-hospital">Requesting Hospital <span class="req">*</span></label>
+              <select id="req-hospital" class="form-select" required>
+                <option value="HSP-1092">CityCare Multispeciality Hospital (Pune)</option>
+                <option value="HSP-2041">Metro General Hospital (Mumbai)</option>
+                <option value="HSP-3015">Apollo Life Sciences Center</option>
+                <option value="HSP-4089">St. Jude Medical Institute</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="req-blood">Blood Group Needed <span class="req">*</span></label>
+              <select id="req-blood" class="form-select" required>
+                <option value="O-">O Negative (O-)</option>
+                <option value="O+">O Positive (O+)</option>
+                <option value="A-">A Negative (A-)</option>
+                <option value="A+">A Positive (A+)</option>
+                <option value="B-">B Negative (B-)</option>
+                <option value="B+">B Positive (B+)</option>
+                <option value="AB-">AB Negative (AB-)</option>
+                <option value="AB+">AB Positive (AB+)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="req-units">Units Required <span class="req">*</span></label>
+              <input type="number" id="req-units" class="form-control" value="2" min="1" max="20" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="req-priority">Priority Level <span class="req">*</span></label>
+              <select id="req-priority" class="form-select" required>
+                <option value="Critical">Critical (&lt; 2 Hours)</option>
+                <option value="Urgent">Urgent (&lt; 6 Hours)</option>
+                <option value="Standard">Standard Schedule</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="req-patient">Patient / Case Reference ID</label>
+              <input type="text" id="req-patient" class="form-control" placeholder="e.g. PAT-9042">
+            </div>
+          </div>
+          <div style="margin-top:1.5rem; display:flex; justify-content:flex-end; gap:0.75rem;">
+            <a href="#" class="btn btn-secondary">Cancel</a>
+            <button type="submit" class="btn btn-danger">Broadcast Request</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Global Multi-Column Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <!-- Col 1 -->
+      <div class="footer-brand">
+        <a href="index.html" class="brand-logo">
+          <div class="brand-icon" aria-hidden="true"></div>
+          <div class="brand-text">
+            <span class="brand-name">Blood<span style="color:#FF6B6B;">Connect</span></span>
+            <span class="brand-sub" style="color:#94A3B8;">Healthcare Network</span>
+          </div>
+        </a>
+        <p class="footer-tagline">
+          “Connecting Every Drop to Those Who Need It.” A modern, secure healthcare blood management ecosystem.
+        </p>
+        <p style="font-size:0.8125rem; color:#64748B;">
+          Demo data for academic/project demonstration only.
+        </p>
+      </div>
+
+      <!-- Col 2 -->
+      <div>
+        <h4 class="footer-col-title">Platform</h4>
+        <ul class="footer-links">
+          <li><a href="dashboard.html">Command Dashboard</a></li>
+          <li><a href="inventory.html">Blood Inventory</a></li>
+          <li><a href="donors.html">Donor Directory</a></li>
+          <li><a href="requests.html">Requisition Center</a></li>
+          <li><a href="analytics.html">Analytics &amp; Reports</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3 -->
+      <div>
+        <h4 class="footer-col-title">Network</h4>
+        <ul class="footer-links">
+          <li><a href="hospitals.html">Connected Hospitals</a></li>
+          <li><a href="hospitals.html#regional-network">Regional Hub Map</a></li>
+          <li><a href="#emergency-modal">Emergency Hotline</a></li>
+          <li><a href="donors.html#register">Register as Donor</a></li>
+          <li><a href="contact.html">Support Dispatch</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4 -->
+      <div>
+        <h4 class="footer-col-title">Company</h4>
+        <ul class="footer-links">
+          <li><a href="about.html">About BloodConnect</a></li>
+          <li><a href="about.html#architecture">System Architecture</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="login.html">Administrator Login</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Copyright Bar -->
+    <div class="container footer-bottom">
+      <div>
+        &copy; 2026 BloodConnect. Academic &amp; Portfolio Project Prototype.
+      </div>
+      <div class="footer-badges">
+        <span class="footer-tech-tag">HTML5 &amp; CSS3 Only</span>
+        <span class="footer-tech-tag">Zero JavaScript</span>
+        <span class="footer-tech-tag">GitHub Pages Ready</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BloodConnect | Blood Requests &amp; Emergency Dispatch</title>
+  <meta name="description" content="Prioritize urgent hospital blood requisitions, track live cross-matching, and manage critical trauma dispatches.">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/api.js" defer></script>
+</head>
+<body>
+
+  <!-- Demo Topbar -->
+  <aside class="demo-topbar" aria-label="Project notice">
+    <span class="pill">Prototype</span>
+    <span>Demo data for academic/project demonstration • Hospital Requisition &amp; Emergency Dispatch Hub</span>
+  </aside>
+
+  <!-- Global Header -->
+  <header class="navbar-wrapper">
+    <input type="checkbox" id="nav-toggle" class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+    <div class="container-wide navbar">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon" aria-hidden="true"></div>
+        <div class="brand-text">
+          <span class="brand-name">Blood<span>Connect</span></span>
+          <span class="brand-sub">Healthcare Network</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="inventory.html" class="nav-link">Inventory</a>
+        <a href="donors.html" class="nav-link">Donors</a>
+        <a href="requests.html" class="nav-link active">Requests</a>
+        <a href="hospitals.html" class="nav-link">Hospitals</a>
+        <a href="analytics.html" class="nav-link">Analytics</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#emergency-modal" class="btn-emergency-nav">
+          <span class="pulse-dot" aria-hidden="true"></span>
+          <span class="btn-text">Emergency Request</span>
+        </a>
+
+        <a href="login.html" class="user-profile-badge">
+          <div class="user-avatar" aria-hidden="true">RQ</div>
+          <div class="user-meta">
+            <span class="user-name">Dispatch Team</span>
+            <span class="user-role">Emergency Desk</span>
+          </div>
+        </a>
+
+        <label for="nav-toggle" class="hamburger-label" aria-label="Open navigation menu">
+          <div class="hamburger-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </label>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container" style="padding: 2.5rem 1.5rem 5rem;">
+
+    <!-- Page Header & Status Section -->
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1.25rem; margin-bottom:2rem;">
+      <div>
+        <div class="badge-tag">Hospital Requisition Queue</div>
+        <h1 class="display-title" style="font-size:2.25rem;">Blood Request Center</h1>
+        <p class="section-subtitle" style="margin-bottom:0;">
+          Real-time triage and delivery tracking for acute trauma centers, surgical wards, and ICU requisitions.
+        </p>
+      </div>
+      <div>
+        <a href="#new-requisition" class="btn btn-primary btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          + Submit Hospital Requisition
+        </a>
+      </div>
+    </div>
+
+    <!-- Summary Counters (Section 13) -->
+    <section class="kpi-grid" style="margin-bottom: 2.5rem;" aria-label="Request Status Overview">
+      <div class="kpi-card" style="border-left:4px solid var(--danger);">
+        <div class="kpi-top">
+          <span class="kpi-label" style="color:var(--danger);">Emergency Requests</span>
+          <div class="kpi-icon-box" style="background:var(--danger-bg); color:var(--danger);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+        </div>
+        <div class="kpi-value" style="color:var(--danger);">7</div>
+        <div class="kpi-trend trend-down">
+          <span>Acute Trauma Cases</span>
+          <span class="trend-text">sub-2hr ETA</span>
+        </div>
+      </div>
+
+      <div class="kpi-card">
+        <div class="kpi-top">
+          <span class="kpi-label">Pending In Queue</span>
+          <div class="kpi-icon-box" style="background:var(--warning-bg); color:var(--warning-dark);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+        </div>
+        <div class="kpi-value">18</div>
+        <div class="kpi-trend" style="color:var(--warning-dark);">
+          <span>Cross-match in progress</span>
+        </div>
+      </div>
+
+      <div class="kpi-card">
+        <div class="kpi-top">
+          <span class="kpi-label">Fulfilled Today</span>
+          <div class="kpi-icon-box" style="background:var(--success-bg); color:var(--success-dark);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+        </div>
+        <div class="kpi-value">42</div>
+        <div class="kpi-trend trend-up">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="18 15 12 9 6 15"/></svg>
+          <span>100% On-time</span>
+          <span class="trend-text">deliveries</span>
+        </div>
+      </div>
+
+      <div class="kpi-card" style="border-left:4px solid #B91C1C;">
+        <div class="kpi-top">
+          <span class="kpi-label" style="color:#B91C1C;">Critical Watch</span>
+          <div class="kpi-icon-box" style="background:#FEE2E2; color:#B91C1C;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          </div>
+        </div>
+        <div class="kpi-value" style="color:#B91C1C;">3</div>
+        <div class="kpi-trend trend-down">
+          <span>Rare blood types</span>
+          <span class="trend-text">O-, B- requested</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Large Emergency Alert Feature Panel (Section 14) -->
+    <section class="emergency-alert-panel" style="margin-bottom: 3.5rem;" aria-labelledby="urgent-banner-title">
+      <div class="emergency-info">
+        <div class="emergency-badge-pulse">
+          <span class="pulse-dot"></span>
+          Emergency Blood Requirement
+        </div>
+        <h2 id="urgent-banner-title" class="emergency-title">Immediate blood requirement detected.</h2>
+        <p class="emergency-details">
+          Massive transfusion protocol initiated at CityCare Multispeciality Trauma Center for an incoming critical collision victim.
+        </p>
+        <div class="emergency-meta-pills">
+          <div class="emergency-pill">Blood Group: <strong>O- Negative</strong></div>
+          <div class="emergency-pill">Units: <strong>4 Units Required</strong></div>
+          <div class="emergency-pill">Time Critical: <strong>Needed Within 02:45 Hours</strong></div>
+          <div class="emergency-pill">Patient Case: <strong>PAT-10284</strong></div>
+        </div>
+      </div>
+      <div style="flex-shrink: 0; display:flex; flex-direction:column; gap:0.75rem;">
+        <a href="donors.html" class="btn btn-primary btn-lg" style="background:#FFFFFF; color:#DC2626; font-weight:800; box-shadow:0 6px 20px rgba(0,0,0,0.3);">
+          Find Compatible Donors
+        </a>
+        <a href="#req-table" class="btn btn-secondary btn-sm" style="background:rgba(255,255,255,0.15); color:#FFFFFF; border:1px solid rgba(255,255,255,0.3); text-align:center;">
+          Review Requisition Queue
+        </a>
+      </div>
+    </section>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar" aria-label="Requisition Filters">
+      <div class="filter-inputs">
+        <input type="text" class="form-control" placeholder="Search Request ID or Hospital" aria-label="Search Requests">
+        <select class="form-select" aria-label="Filter by Priority">
+          <option value="">Priority: All</option>
+          <option value="critical">Critical</option>
+          <option value="urgent">Urgent</option>
+          <option value="standard">Standard</option>
+        </select>
+        <select class="form-select" aria-label="Filter by Blood Type">
+          <option value="">Blood Group: All</option>
+          <option value="O-">O Negative (O-)</option>
+          <option value="O+">O Positive (O+)</option>
+          <option value="B+">B Positive (B+)</option>
+          <option value="A-">A Negative (A-)</option>
+        </select>
+        <select class="form-select" aria-label="Filter by Status">
+          <option value="">Status: All Stages</option>
+          <option value="matching">Matching</option>
+          <option value="transit">In Transit</option>
+          <option value="fulfilled">Fulfilled</option>
+        </select>
+      </div>
+      <div>
+        <span class="badge badge-neutral">Showing 6 Active Requisitions</span>
+      </div>
+    </div>
+
+    <!-- Blood Request Table (Section 13) -->
+    <section id="req-table" class="card" style="padding:0; overflow:hidden; margin-bottom:3.5rem;" aria-labelledby="table-title">
+      <div class="card-header" style="padding:1.25rem 1.5rem; margin-bottom:0;">
+        <div>
+          <h2 id="table-title" class="card-title">Live Hospital Requisition Ledger</h2>
+          <span class="card-subtitle">Continuous cross-match tracking from request to cold-chain delivery</span>
+        </div>
+        <span class="badge badge-info">Auto-Synced with Hospital HL7/FHIR Nodes</span>
+      </div>
+
+      <div class="table-responsive" style="border:none; border-radius:0;">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Request ID</th>
+              <th>Hospital</th>
+              <th>Blood Type</th>
+              <th>Units</th>
+              <th>Priority</th>
+              <th>Requested</th>
+              <th>Status</th>
+              <th style="text-align:right;">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Row 1 -->
+            <tr style="background:#FFF5F5;">
+              <td class="cell-mono" style="color:var(--danger); font-weight:700;">REQ-2048</td>
+              <td class="cell-highlight">
+                CityCare Multispeciality Hospital
+                <div style="font-size:0.75rem; color:#64748B;">Trauma Room 3 • Case PAT-10284</div>
+              </td>
+              <td><span class="badge badge-danger" style="font-size:0.875rem;">O-</span></td>
+              <td><strong style="font-size:1rem; color:var(--danger);">4 Units</strong></td>
+              <td><span class="badge badge-danger">Critical</span></td>
+              <td style="color:#64748B; font-size:0.8125rem;">Today, 09:42 AM</td>
+              <td><span class="badge badge-warning">Matching</span></td>
+              <td style="text-align:right;">
+                <a href="donors.html" class="btn btn-sm btn-danger">Match Donors</a>
+              </td>
+            </tr>
+
+            <!-- Row 2 -->
+            <tr>
+              <td class="cell-mono">REQ-2049</td>
+              <td class="cell-highlight">
+                Metro General Hospital
+                <div style="font-size:0.75rem; color:#64748B;">Cardiology ICU • Case PAT-10285</div>
+              </td>
+              <td><span class="badge badge-success" style="font-size:0.875rem;">B+</span></td>
+              <td><strong>2 Units</strong></td>
+              <td><span class="badge badge-warning">Urgent</span></td>
+              <td style="color:#64748B; font-size:0.8125rem;">1 hour ago</td>
+              <td><span class="badge badge-info">In Transit</span></td>
+              <td style="text-align:right;">
+                <a href="#details" class="btn btn-sm btn-secondary">Track Van</a>
+              </td>
+            </tr>
+
+            <!-- Row 3 -->
+            <tr>
+              <td class="cell-mono">REQ-2050</td>
+              <td class="cell-highlight">
+                Apollo Life Sciences Center
+                <div style="font-size:0.75rem; color:#64748B;">Oncology Unit • Platelets</div>
+              </td>
+              <td><span class="badge badge-success" style="font-size:0.875rem;">A+ (Platelets)</span></td>
+              <td><strong>6 Units</strong></td>
+              <td><span class="badge badge-neutral">Standard</span></td>
+              <td style="color:#64748B; font-size:0.8125rem;">3 hours ago</td>
+              <td><span class="badge badge-neutral">Scheduled</span></td>
+              <td style="text-align:right;">
+                <a href="#details" class="btn btn-sm btn-secondary">Review</a>
+              </td>
+            </tr>
+
+            <!-- Row 4 -->
+            <tr style="background:#FFF5F5;">
+              <td class="cell-mono" style="color:var(--danger); font-weight:700;">REQ-2051</td>
+              <td class="cell-highlight">
+                St. Jude Medical Institute
+                <div style="font-size:0.75rem; color:#64748B;">Emergency OT • Case PAT-10288</div>
+              </td>
+              <td><span class="badge badge-danger" style="font-size:0.875rem;">AB-</span></td>
+              <td><strong style="color:var(--danger);">1 Unit</strong></td>
+              <td><span class="badge badge-danger">Critical</span></td>
+              <td style="color:#64748B; font-size:0.8125rem;">20 mins ago</td>
+              <td><span class="badge badge-warning">Donor Cross-match</span></td>
+              <td style="text-align:right;">
+                <a href="donors.html" class="btn btn-sm btn-danger">Alert Donors</a>
+              </td>
+            </tr>
+
+            <!-- Row 5 -->
+            <tr>
+              <td class="cell-mono">REQ-2052</td>
+              <td class="cell-highlight">
+                Ruby Hall Clinic
+                <div style="font-size:0.75rem; color:#64748B;">Orthopedic Ward • Case PAT-10290</div>
+              </td>
+              <td><span class="badge badge-warning" style="font-size:0.875rem;">A-</span></td>
+              <td><strong>2 Units</strong></td>
+              <td><span class="badge badge-warning">Urgent</span></td>
+              <td style="color:#64748B; font-size:0.8125rem;">45 mins ago</td>
+              <td><span class="badge badge-info">Courier Dispatched</span></td>
+              <td style="text-align:right;">
+                <a href="#details" class="btn btn-sm btn-secondary">Status</a>
+              </td>
+            </tr>
+
+            <!-- Row 6 -->
+            <tr>
+              <td class="cell-mono">REQ-2053</td>
+              <td class="cell-highlight">
+                Sanjeevani Children's Hospital
+                <div style="font-size:0.75rem; color:#64748B;">Pediatric Ward • Routine Transfusion</div>
+              </td>
+              <td><span class="badge badge-success" style="font-size:0.875rem;">O+</span></td>
+              <td><strong>3 Units</strong></td>
+              <td><span class="badge badge-neutral">Standard</span></td>
+              <td style="color:#64748B; font-size:0.8125rem;">4 hours ago</td>
+              <td><span class="badge badge-success">Fulfilled</span></td>
+              <td style="text-align:right;">
+                <a href="#details" class="btn btn-sm btn-secondary">Receipt</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Professional Emergency Request Creation Form -->
+    <section id="new-requisition" class="card" style="padding:2.5rem; max-width:880px; margin:0 auto;" aria-labelledby="form-req-title">
+      <div style="text-align:center; margin-bottom:2rem;">
+        <span class="badge-tag">Hospital Portal Requisition</span>
+        <h2 id="form-req-title" class="section-title" style="font-size:1.875rem;">Create New Blood Requisition</h2>
+        <p class="section-subtitle" style="margin-bottom:0; margin-left:auto; margin-right:auto;">
+          Authorized healthcare personnel may place standard, urgent, or critical transfusion orders directly into the regional bank dispatch queue.
+        </p>
+      </div>
+
+      <form action="#submitted" method="GET">
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label" for="req-hosp-name">Requesting Hospital <span class="req">*</span></label>
+            <select id="req-hosp-name" class="form-select" required>
+              <option value="">Select Affiliated Hospital</option>
+              <option value="HSP-1092">CityCare Multispeciality Hospital (Pune)</option>
+              <option value="HSP-2041">Metro General Hospital (Mumbai)</option>
+              <option value="HSP-3015">Apollo Life Sciences Center (Pune)</option>
+              <option value="HSP-4089">St. Jude Medical Institute (Thane)</option>
+              <option value="HSP-5120">Ruby Hall Clinic (Pune)</option>
+              <option value="HSP-6240">Sanjeevani Children's Hospital (Mumbai)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="req-patient-id">Patient / File Reference ID <span class="req">*</span></label>
+            <input type="text" id="req-patient-id" class="form-control" placeholder="e.g. PAT-10295" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="req-blood-group">Blood Group Required <span class="req">*</span></label>
+            <select id="req-blood-group" class="form-select" required>
+              <option value="">Select Blood Group</option>
+              <option value="O-">O Negative (O-) [Urgent Cross-match]</option>
+              <option value="O+">O Positive (O+)</option>
+              <option value="A-">A Negative (A-)</option>
+              <option value="A+">A Positive (A+)</option>
+              <option value="B-">B Negative (B-)</option>
+              <option value="B+">B Positive (B+)</option>
+              <option value="AB-">AB Negative (AB-)</option>
+              <option value="AB+">AB Positive (AB+)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="req-units-num">Required Units (Bags) <span class="req">*</span></label>
+            <input type="number" id="req-units-num" class="form-control" min="1" max="15" value="2" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="req-priority-level">Requisition Priority <span class="req">*</span></label>
+            <select id="req-priority-level" class="form-select" required>
+              <option value="critical">Critical (Immediate ETA &lt; 2 Hours)</option>
+              <option value="urgent">Urgent (Within 6 Hours)</option>
+              <option value="standard">Standard (Elective / Next Day)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="req-needed-by">Required By (Date &amp; Time) <span class="req">*</span></label>
+            <input type="datetime-local" id="req-needed-by" class="form-control" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="req-contact-person">Attending Physician / Liaison <span class="req">*</span></label>
+            <input type="text" id="req-contact-person" class="form-control" placeholder="Dr. R. Kulkarni (+91 98221 00000)" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="req-department">Department / Ward</label>
+            <input type="text" id="req-department" class="form-control" placeholder="e.g. Trauma ICU Room 4">
+          </div>
+
+          <div class="form-group form-group-full">
+            <label class="form-label" for="req-notes">Clinical Notes / Transfusion Indications</label>
+            <textarea id="req-notes" class="form-control" rows="3" placeholder="Provide relevant details such as emergency surgery, shock index, or specific antibody screening requirements..."></textarea>
+          </div>
+        </div>
+
+        <div style="margin-top:2rem; text-align:center;">
+          <button type="submit" class="btn btn-primary btn-lg" style="width:100%; max-width:320px;">
+            Submit Requisition To Queue
+          </button>
+        </div>
+      </form>
+
+      <!-- Feedback target -->
+      <div id="submitted" style="margin-top:1.5rem; padding:1rem; background:#DCFCE7; border:1px solid #BBF7D0; border-radius:var(--radius-md); display:none;">
+        <p style="color:#15803D; font-weight:700; font-size:0.875rem; text-align:center; margin:0;">
+          Requisition logged successfully! Requisition ID REQ-2054 created with active cold-chain tracking.
+        </p>
+      </div>
+      <style>
+        #submitted:target {
+          display: block !important;
+        }
+      </style>
+    </section>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand-logo">
+          <div class="brand-icon" aria-hidden="true"></div>
+          <div class="brand-text">
+            <span class="brand-name">Blood<span style="color:#FF6B6B;">Connect</span></span>
+            <span class="brand-sub" style="color:#94A3B8;">Healthcare Network</span>
+          </div>
+        </a>
+        <p class="footer-tagline">“Connecting Every Drop to Those Who Need It.” Requisition and emergency logistics.</p>
+        <p style="font-size:0.8125rem; color:#64748B;">Academic &amp; Portfolio Project Prototype</p>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Platform</h4>
+        <ul class="footer-links">
+          <li><a href="dashboard.html">Command Dashboard</a></li>
+          <li><a href="inventory.html">Blood Inventory</a></li>
+          <li><a href="donors.html">Donor Registry</a></li>
+          <li><a href="requests.html">Requisition Center</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Hospital Services</h4>
+        <ul class="footer-links">
+          <li><a href="hospitals.html">Hospital Directory</a></li>
+          <li><a href="#new-requisition">New Request</a></li>
+          <li><a href="analytics.html">Fulfillment SLAs</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Legal &amp; System</h4>
+        <ul class="footer-links">
+          <li><a href="about.html">About BloodConnect</a></li>
+          <li><a href="contact.html">Dispatch Contact</a></li>
+          <li><a href="login.html">Sign In</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>&copy; 2026 BloodConnect • Academic Project Demo</div>
+      <div class="footer-badges">
+        <span class="footer-tech-tag">HTML5 &amp; CSS3</span>
+        <span class="footer-tech-tag">Zero JavaScript</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

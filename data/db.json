@@ -1,0 +1,349 @@
+{
+  "stats": {
+    "totalUnits": 2460,
+    "activeDonors": 12840,
+    "pendingRequests": 34,
+    "emergencyRequests": 7,
+    "hospitalsConnected": 186,
+    "responseRate": 98.7,
+    "avgResponseMinutes": 18
+  },
+  "inventory": [
+    {
+      "id": "INV-001",
+      "bloodGroup": "O+",
+      "rhFactor": "Positive (+)",
+      "availableUnits": 482,
+      "reservedUnits": 61,
+      "criticalThreshold": 120,
+      "capacityPercent": 85,
+      "expiryRisk": "Low",
+      "status": "Available",
+      "lastUpdated": "12m ago"
+    },
+    {
+      "id": "INV-002",
+      "bloodGroup": "A+",
+      "rhFactor": "Positive (+)",
+      "availableUnits": 318,
+      "reservedUnits": 48,
+      "criticalThreshold": 100,
+      "capacityPercent": 72,
+      "expiryRisk": "Medium (12 exp)",
+      "status": "Available",
+      "lastUpdated": "8m ago"
+    },
+    {
+      "id": "INV-003",
+      "bloodGroup": "B+",
+      "rhFactor": "Positive (+)",
+      "availableUnits": 412,
+      "reservedUnits": 52,
+      "criticalThreshold": 95,
+      "capacityPercent": 78,
+      "expiryRisk": "Low",
+      "status": "Available",
+      "lastUpdated": "24m ago"
+    },
+    {
+      "id": "INV-004",
+      "bloodGroup": "AB+",
+      "rhFactor": "Positive (+)",
+      "availableUnits": 184,
+      "reservedUnits": 22,
+      "criticalThreshold": 50,
+      "capacityPercent": 65,
+      "expiryRisk": "Low",
+      "status": "Available",
+      "lastUpdated": "30m ago"
+    },
+    {
+      "id": "INV-005",
+      "bloodGroup": "O-",
+      "rhFactor": "Negative (-)",
+      "availableUnits": 34,
+      "reservedUnits": 18,
+      "criticalThreshold": 80,
+      "capacityPercent": 28,
+      "expiryRisk": "Critical Need",
+      "status": "Critical",
+      "lastUpdated": "4m ago"
+    },
+    {
+      "id": "INV-006",
+      "bloodGroup": "A-",
+      "rhFactor": "Negative (-)",
+      "availableUnits": 96,
+      "reservedUnits": 16,
+      "criticalThreshold": 60,
+      "capacityPercent": 48,
+      "expiryRisk": "Low",
+      "status": "Limited Stock",
+      "lastUpdated": "15m ago"
+    },
+    {
+      "id": "INV-007",
+      "bloodGroup": "B-",
+      "rhFactor": "Negative (-)",
+      "availableUnits": 18,
+      "reservedUnits": 9,
+      "criticalThreshold": 40,
+      "capacityPercent": 22,
+      "expiryRisk": "High Deficit",
+      "status": "Critical",
+      "lastUpdated": "9m ago"
+    },
+    {
+      "id": "INV-008",
+      "bloodGroup": "AB-",
+      "rhFactor": "Negative (-)",
+      "availableUnits": 12,
+      "reservedUnits": 3,
+      "criticalThreshold": 25,
+      "capacityPercent": 25,
+      "expiryRisk": "Medium",
+      "status": "Low Stock",
+      "lastUpdated": "18m ago"
+    }
+  ],
+  "donors": [
+    {
+      "id": "BC-10452",
+      "name": "Aarav Sharma",
+      "bloodGroup": "O+",
+      "age": 28,
+      "location": "Pune, MH",
+      "phone": "+91 98765 43210",
+      "email": "aarav.sharma@example.com",
+      "lastDonation": "45 days ago",
+      "eligibility": "Eligible",
+      "status": "Active"
+    },
+    {
+      "id": "BC-10453",
+      "name": "Riya Patil",
+      "bloodGroup": "B+",
+      "age": 24,
+      "location": "Mumbai, MH",
+      "phone": "+91 98221 11223",
+      "email": "riya.patil@example.com",
+      "lastDonation": "92 days ago",
+      "eligibility": "Eligible",
+      "status": "Active"
+    },
+    {
+      "id": "BC-10454",
+      "name": "Vikram Sen",
+      "bloodGroup": "A-",
+      "age": 34,
+      "location": "Thane, MH",
+      "phone": "+91 98450 33445",
+      "email": "vikram.sen@example.com",
+      "lastDonation": "18 days ago",
+      "eligibility": "Resting (72d left)",
+      "status": "Cooling Off"
+    },
+    {
+      "id": "BC-10455",
+      "name": "Ananya Iyer",
+      "bloodGroup": "O-",
+      "age": 29,
+      "location": "Pune, MH",
+      "phone": "+91 98900 55667",
+      "email": "ananya.iyer@example.com",
+      "lastDonation": "110 days ago",
+      "eligibility": "Universal Match",
+      "status": "Emergency Ready"
+    },
+    {
+      "id": "BC-10456",
+      "name": "Rohan Kulkarni",
+      "bloodGroup": "AB+",
+      "age": 41,
+      "location": "Nashik, MH",
+      "phone": "+91 98111 77889",
+      "email": "rohan.k@example.com",
+      "lastDonation": "60 days ago",
+      "eligibility": "Eligible",
+      "status": "Active"
+    },
+    {
+      "id": "BC-10457",
+      "name": "Sneha Deshmukh",
+      "bloodGroup": "B-",
+      "age": 26,
+      "location": "Pune, MH",
+      "phone": "+91 98333 99001",
+      "email": "sneha.d@example.com",
+      "lastDonation": "150 days ago",
+      "eligibility": "Eligible",
+      "status": "High Priority"
+    }
+  ],
+  "requests": [
+    {
+      "id": "REQ-2048",
+      "hospital": "CityCare Multispeciality Hospital",
+      "department": "Trauma Room 3",
+      "patientId": "PAT-10284",
+      "bloodGroup": "O-",
+      "units": 4,
+      "priority": "Critical",
+      "requestedTime": "Today, 09:42 AM",
+      "neededBy": "02:45 Hours",
+      "status": "Matching"
+    },
+    {
+      "id": "REQ-2049",
+      "hospital": "Metro General Hospital",
+      "department": "Cardiology ICU",
+      "patientId": "PAT-10285",
+      "bloodGroup": "B+",
+      "units": 2,
+      "priority": "Urgent",
+      "requestedTime": "1 hour ago",
+      "neededBy": "04:00 Hours",
+      "status": "In Transit"
+    },
+    {
+      "id": "REQ-2050",
+      "hospital": "Apollo Life Sciences Center",
+      "department": "Oncology Unit",
+      "patientId": "PAT-10286",
+      "bloodGroup": "A+ (Platelets)",
+      "units": 6,
+      "priority": "Standard",
+      "requestedTime": "3 hours ago",
+      "neededBy": "12:00 Hours",
+      "status": "Scheduled"
+    },
+    {
+      "id": "REQ-2051",
+      "hospital": "St. Jude Medical Institute",
+      "department": "Emergency OT",
+      "patientId": "PAT-10288",
+      "bloodGroup": "AB-",
+      "units": 1,
+      "priority": "Critical",
+      "requestedTime": "20 mins ago",
+      "neededBy": "01:30 Hours",
+      "status": "Donor Cross-match"
+    },
+    {
+      "id": "REQ-2052",
+      "hospital": "Ruby Hall Clinic",
+      "department": "Orthopedic Ward",
+      "patientId": "PAT-10290",
+      "bloodGroup": "A-",
+      "units": 2,
+      "priority": "Urgent",
+      "requestedTime": "45 mins ago",
+      "neededBy": "03:00 Hours",
+      "status": "Courier Dispatched"
+    },
+    {
+      "id": "REQ-2053",
+      "hospital": "Sanjeevani Children's Hospital",
+      "department": "Pediatric Ward",
+      "patientId": "PAT-10292",
+      "bloodGroup": "O+",
+      "units": 3,
+      "priority": "Standard",
+      "requestedTime": "4 hours ago",
+      "neededBy": "Completed",
+      "status": "Fulfilled"
+    }
+  ],
+  "hospitals": [
+    {
+      "id": "HSP-1092",
+      "name": "CityCare Multispeciality Hospital",
+      "location": "Mumbai, Maharashtra",
+      "demandUnits": 42,
+      "stockUnits": 68,
+      "emergencyLevel": "Normal",
+      "connectedSince": "Jan 2024",
+      "status": "Connected"
+    },
+    {
+      "id": "HSP-2041",
+      "name": "St. Jude Medical Institute",
+      "location": "Thane, Maharashtra",
+      "demandUnits": 24,
+      "stockUnits": 15,
+      "emergencyLevel": "High Alert",
+      "connectedSince": "Mar 2023",
+      "status": "Urgent Requisition"
+    },
+    {
+      "id": "HSP-3015",
+      "name": "Metro General Hospital",
+      "location": "Mumbai, Maharashtra",
+      "demandUnits": 36,
+      "stockUnits": 52,
+      "emergencyLevel": "Normal",
+      "connectedSince": "Aug 2022",
+      "status": "Connected"
+    },
+    {
+      "id": "HSP-4089",
+      "name": "Apollo Life Sciences Center",
+      "location": "Pune, Maharashtra",
+      "demandUnits": 28,
+      "stockUnits": 35,
+      "emergencyLevel": "Normal",
+      "connectedSince": "Nov 2023",
+      "status": "Connected"
+    },
+    {
+      "id": "HSP-5120",
+      "name": "Ruby Hall Clinic",
+      "location": "Pune, Maharashtra",
+      "demandUnits": 19,
+      "stockUnits": 24,
+      "emergencyLevel": "Normal",
+      "connectedSince": "Feb 2023",
+      "status": "Connected"
+    },
+    {
+      "id": "HSP-6240",
+      "name": "Sanjeevani Children's Hospital",
+      "location": "Mumbai, Maharashtra",
+      "demandUnits": 12,
+      "stockUnits": 16,
+      "emergencyLevel": "Normal",
+      "connectedSince": "Jun 2024",
+      "status": "Connected"
+    }
+  ],
+  "activity": [
+    {
+      "id": "ACT-001",
+      "type": "critical",
+      "title": "Emergency Request Broadcast",
+      "time": "09:42 AM",
+      "description": "O- blood request (4 units) received from CityCare Hospital Trauma Room 3."
+    },
+    {
+      "id": "ACT-002",
+      "type": "success",
+      "title": "Donor Registration Completed",
+      "time": "09:31 AM",
+      "description": "Voluntary donor registered: DON-20493 (Aarav Sharma, O+). Verified health clearance."
+    },
+    {
+      "id": "ACT-003",
+      "type": "info",
+      "title": "Inventory Restocked",
+      "time": "09:15 AM",
+      "description": "35 units of A+ blood inventory added to Regional Vault 2 after laboratory screening."
+    },
+    {
+      "id": "ACT-004",
+      "type": "success",
+      "title": "Emergency Request Fulfilled",
+      "time": "08:52 AM",
+      "description": "Requisition REQ-30280 (B+ 2 Units) signed off & delivered to Metro General ICU."
+    }
+  ]
+}

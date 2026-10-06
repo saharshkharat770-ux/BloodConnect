@@ -1,0 +1,21 @@
+{
+  "name": "bloodconnect",
+  "version": "2.4.0",
+  "description": "Healthcare Blood Bank Management System with Pure CSS Frontend and Lightweight Mock REST API Backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "blood-bank",
+    "healthcare",
+    "html5",
+    "css3",
+    "github-pages",
+    "rest-api",
+    "mock-database"
+  ],
+  "author": "Saharsh Kharat",
+  "license": "MIT"
+}

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BloodConnect | Institutional Portal Sign In</title>
+  <meta name="description" content="Secure role-based access for healthcare administrators, blood bank technicians, and hospital liaisons.">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="min-height: 100vh; display: flex; flex-direction: column;">
+
+  <!-- Demo Topbar -->
+  <aside class="demo-topbar" aria-label="Project notice">
+    <span class="pill">Prototype Authentication</span>
+    <span>Demo data for academic/project demonstration • Static Login Portal (Click 'Sign In' to enter Dashboard)</span>
+  </aside>
+
+  <!-- Simplified Navbar -->
+  <header class="navbar-wrapper">
+    <div class="container-wide navbar" style="height: 4.25rem;">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon" aria-hidden="true"></div>
+        <div class="brand-text">
+          <span class="brand-name">Blood<span>Connect</span></span>
+          <span class="brand-sub">Healthcare Network</span>
+        </div>
+      </a>
+
+      <div style="display:flex; align-items:center; gap:1rem;">
+        <span style="font-size:0.875rem; color:#64748B;">Need assistance?</span>
+        <a href="contact.html" class="btn btn-sm btn-secondary">Support Desk</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Split Screen Authentication Layout (Section 19) -->
+  <main class="auth-page-wrapper" style="flex:1;">
+
+    <!-- Left: Branding & Healthcare Mission Showcase -->
+    <div class="auth-brand-side">
+      <div>
+        <div class="badge-tag" style="background:rgba(255,255,255,0.15); color:#FFFFFF; border:1px solid rgba(255,255,255,0.25);">
+          Unified Healthcare Operations
+        </div>
+        <h1 style="font-size:2.5rem; color:#FFFFFF; margin:1rem 0; line-height:1.2; letter-spacing:-0.03em;">
+          Secure Access for Healthcare Professionals.
+        </h1>
+        <p style="color:#94A3B8; font-size:1.0625rem; line-height:1.6; max-width:440px;">
+          Coordinate vital blood logistics, verify cold-chain storage parameters, and dispatch critical trauma reserves with encrypted compliance.
+        </p>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:1.25rem; margin:2.5rem 0;">
+        <div style="display:flex; align-items:flex-start; gap:0.875rem;">
+          <div style="width:2rem; height:2rem; border-radius:50%; background:rgba(22,163,74,0.2); color:#4ADE80; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div>
+            <h2 style="font-size:0.9375rem; font-weight:700; color:#FFFFFF; margin:0;">Role-Based Institutional Access</h2>
+            <p style="font-size:0.8125rem; color:#94A3B8; margin:0;">Fine-grained access controls for Administrators, Vault Staff, and Hospital MDs.</p>
+          </div>
+        </div>
+
+        <div style="display:flex; align-items:flex-start; gap:0.875rem;">
+          <div style="width:2rem; height:2rem; border-radius:50%; background:rgba(22,163,74,0.2); color:#4ADE80; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div>
+            <h2 style="font-size:0.9375rem; font-weight:700; color:#FFFFFF; margin:0;">Automated Cold-Chain Telemetry</h2>
+            <p style="font-size:0.8125rem; color:#94A3B8; margin:0;">Continuous +2&deg;C to +6&deg;C cold-vault logging with instant deficit triggers.</p>
+          </div>
+        </div>
+
+        <div style="display:flex; align-items:flex-start; gap:0.875rem;">
+          <div style="width:2rem; height:2rem; border-radius:50%; background:rgba(22,163,74,0.2); color:#4ADE80; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div>
+            <h2 style="font-size:0.9375rem; font-weight:700; color:#FFFFFF; margin:0;">HIPAA &amp; NABH Protocol Compliant</h2>
+            <p style="font-size:0.8125rem; color:#94A3B8; margin:0;">All voluntary donor records are anonymized to protect personal medical data.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="border-top:1px solid rgba(255,255,255,0.1); padding-top:1.5rem; font-size:0.8125rem; color:#64748B;">
+        BloodConnect Infrastructure &bull; Version 2.4 &bull; Fictional Healthcare Prototype
+      </div>
+    </div>
+
+    <!-- Right: Login Form Card -->
+    <div class="auth-form-side">
+      <div class="auth-card">
+        <div style="text-align:center; margin-bottom:1.75rem;">
+          <div class="brand-icon" style="margin:0 auto 1rem; width:2.5rem; height:2.5rem;" aria-hidden="true"></div>
+          <h2 style="font-size:1.625rem; font-weight:800; color:var(--navy-900); margin-bottom:0.25rem;">Sign In to Portal</h2>
+          <p style="font-size:0.875rem; color:#64748B;">Choose your operational role and credentials</p>
+        </div>
+
+        <form action="dashboard.html" method="GET">
+          <!-- Role Selector -->
+          <div class="form-group" style="margin-bottom:1.25rem;">
+            <label class="form-label" style="margin-bottom:0.375rem;">Select Your Role</label>
+            <div class="role-selector">
+              <div class="role-option">
+                <input type="radio" name="role" id="role-admin" value="admin" checked>
+                <label for="role-admin">Administrator</label>
+              </div>
+              <div class="role-option">
+                <input type="radio" name="role" id="role-staff" value="staff">
+                <label for="role-staff">Blood Staff</label>
+              </div>
+              <div class="role-option">
+                <input type="radio" name="role" id="role-hospital" value="hospital">
+                <label for="role-hospital">Hospital</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Email Input -->
+          <div class="form-group" style="margin-bottom:1.125rem;">
+            <label class="form-label" for="login-email">Institutional Email <span class="req">*</span></label>
+            <input type="email" id="login-email" class="form-control" value="admin@bloodconnect.org" required>
+          </div>
+
+          <!-- Password Input -->
+          <div class="form-group" style="margin-bottom:1.125rem;">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <label class="form-label" for="login-password">Password <span class="req">*</span></label>
+              <a href="#forgot" style="font-size:0.75rem; color:var(--primary); font-weight:600;">Forgot password?</a>
+            </div>
+            <input type="password" id="login-password" class="form-control" value="••••••••••••" required>
+          </div>
+
+          <!-- Remember Me -->
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+            <label class="form-check">
+              <input type="checkbox" checked>
+              <span style="font-size:0.8125rem; color:#64748B;">Remember this station (12h)</span>
+            </label>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-primary btn-lg" style="width:100%;">
+            Sign In to Command Center &rarr;
+          </button>
+        </form>
+
+        <div style="text-align:center; margin-top:1.5rem; font-size:0.8125rem; color:#64748B;">
+          Don't have an authorized token? <a href="contact.html" style="color:var(--primary); font-weight:700;">Request Institutional Access</a>
+        </div>
+
+        <div id="forgot" style="margin-top:1.25rem; padding:0.75rem; background:#FEF3C7; border:1px solid #FDE68A; border-radius:var(--radius-sm); font-size:0.75rem; color:#92400E; display:none; text-align:center;">
+          Static Demo Note: Passwords are simulated for portfolio demonstration. Simply click "Sign In" to proceed to the live dashboard.
+        </div>
+        <style>
+          #forgot:target {
+            display: block !important;
+          }
+        </style>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Simple Footer -->
+  <footer class="site-footer" style="padding:1.5rem 0; margin:0;">
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; font-size:0.8125rem; color:#94A3B8;">
+      <div>&copy; 2026 BloodConnect • Academic Project Demo</div>
+      <div>HTML5 &amp; CSS3 Static Prototype</div>
+    </div>
+  </footer>
+
+</body>
+</html>
